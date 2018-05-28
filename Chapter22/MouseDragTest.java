@@ -17,6 +17,8 @@ public class MouseDragTest extends JFrame
         super("Frame Name Here");
 
         panel = new Panel();
+        panel.addMouseListener((MouseListener)panel);
+        panel.addMouseMotionListener((MouseMotionListener)panel);
         add(panel);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -100,8 +102,8 @@ public class MouseDragTest extends JFrame
             this.mouseListener = new ShapeMouseListener();
             this.mouseMotionListener = new ShapeMouseMotionListener();
 
-//            this.parent.addMouseListener(this.mouseListener);
-//            this.parent.addMouseMotionListener(this.mouseMotionListener);
+            this.parent.addMouseListener(this.mouseListener);
+            this.parent.addMouseMotionListener(this.mouseMotionListener);
         }
 
         private class ShapeMouseListener extends MouseAdapter
