@@ -1,7 +1,7 @@
 //: net/mindview/util/New.java
 // Utilities to simplify generic container creation
 // by using type argument inference.
-package net.mindview.util;
+package thirdparty.net.mindview.util;
 import java.util.*;
 
 public class New {

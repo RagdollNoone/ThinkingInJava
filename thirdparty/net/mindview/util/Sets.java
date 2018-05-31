@@ -1,5 +1,5 @@
 //: net/mindview/util/Sets.java
-package net.mindview.util;
+package thirdparty.net.mindview.util;
 import java.util.*;
 
 public class Sets {

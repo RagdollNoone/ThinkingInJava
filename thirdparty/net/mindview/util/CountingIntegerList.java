@@ -1,6 +1,6 @@
 //: net/mindview/util/CountingIntegerList.java
 // List of any length, containing sample data.
-package net.mindview.util;
+package thirdparty.net.mindview.util;
 import java.util.*;
 
 public class CountingIntegerList

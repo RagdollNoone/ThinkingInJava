@@ -1,7 +1,7 @@
 //: net/mindview/util/OSExecute.java
 // Run an operating system command
 // and send the output to the console.
-package net.mindview.util;
+package thirdparty.net.mindview.util;
 import java.io.*;
 
 public class OSExecute {

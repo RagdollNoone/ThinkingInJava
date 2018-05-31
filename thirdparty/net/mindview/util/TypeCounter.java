@@ -1,6 +1,6 @@
 //: net/mindview/util/TypeCounter.java
 // Counts instances of a type family.
-package net.mindview.util;
+package thirdparty.net.mindview.util;
 import java.util.*;
 
 public class TypeCounter extends HashMap<Class<?>,Integer>{

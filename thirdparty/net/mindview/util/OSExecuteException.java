@@ -1,5 +1,5 @@
 //: net/mindview/util/OSExecuteException.java
-package net.mindview.util;
+package thirdparty.net.mindview.util;
 
 public class OSExecuteException extends RuntimeException {
   public OSExecuteException(String why) { super(why); }

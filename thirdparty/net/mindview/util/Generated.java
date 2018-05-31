@@ -1,5 +1,5 @@
 //: net/mindview/util/Generated.java
-package net.mindview.util;
+package thirdparty.net.mindview.util;
 import java.util.*;
 
 public class Generated {

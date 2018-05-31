@@ -1,5 +1,5 @@
 //: net/mindview/util/TwoTuple.java
-package net.mindview.util;
+package thirdparty.net.mindview.util;
 
 public class TwoTuple<A,B> {
   public final A first;
