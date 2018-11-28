@@ -1,5 +1,4 @@
-package HelloWorld;
-import java.io.FileOutputStream;
+package master.HelloWorld;
 
 public class HelloWorldTest {
 	
