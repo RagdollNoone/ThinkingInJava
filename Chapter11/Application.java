@@ -91,7 +91,7 @@ public class Application {
 
         while (null != classType && null != classType.getSuperclass())
         {
-            System.out.println("Inherit From Object " + classType.getSuperclass().getName());
+            System.out.println("Inherit From Object " + classType.getSuperclass().getSimpleName());
             classType = classType.getSuperclass();
         }
     }
