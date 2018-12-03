@@ -17,7 +17,19 @@ class Cookie {
 }
 
 public class SweetShop {
-  public static void main(String[] args) {	
+  public static void main(String[] args) {
+    // new add
+    try {
+        Class c = Class.forName(args[0]);
+        c.newInstance();
+    } catch (ClassNotFoundException e){
+        print("Not Found " + args[0]);
+    } catch (IllegalAccessException e) {
+        print("IllegalAccessException Occur");
+    } catch (InstantiationException e){
+        print("InstantiationException Occur");
+    }
+
     print("inside main");
 
     new Candy();

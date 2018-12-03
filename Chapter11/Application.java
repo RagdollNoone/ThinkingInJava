@@ -1,8 +1,10 @@
 package master.Chapter11;
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Enumeration;
 import java.util.Vector;
+import master.Common.Print;
 
 public class Application {
     private static Vector m_shapeVec = new Vector();
@@ -13,7 +15,8 @@ public class Application {
 //            print();
 //            constructShapes();
 //            usgeOfClass();
-            testFindInheritObject();
+//            testFindInheritObject();
+            testPrintField();
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -94,5 +97,58 @@ public class Application {
             System.out.println("Inherit From Object " + classType.getSuperclass().getSimpleName());
             classType = classType.getSuperclass();
         }
+    }
+
+    public static void testPrintField()
+    {
+        class Base{
+            public float f;
+        }
+
+        class B extends Base{
+            public float f;
+        }
+
+        class A {
+            public int i;
+            public double d;
+            public B b;
+
+            private float f;
+        }
+
+        A object = new A();
+        printField(object);
+    }
+
+    public static void printField(Object o)
+    {
+        Class classType = o.getClass();
+
+        if (null != classType)
+        {
+            Field[] fieldsArr = classType.getFields();
+
+            for(int i =0; i < fieldsArr.length; i++) {
+                Class fieldClassInfo = fieldsArr[i].getType();
+                master.Common.Print.print("FieldName: " + fieldsArr[i].getName() + " Field Type: " + fieldClassInfo.getSimpleName());
+
+                while (null != fieldClassInfo && null != fieldClassInfo.getSuperclass())
+                {
+                    System.out.println("Inherit From Object " + fieldClassInfo.getSuperclass().getSimpleName());
+                    fieldClassInfo = fieldClassInfo.getSuperclass();
+                }
+            }
+        }
+    }
+
+    public static void testObjectOrCharArray()
+    {
+        class Base{
+            int i = 1;
+        }
+
+        Base Object = new Base();
+
     }
 }
