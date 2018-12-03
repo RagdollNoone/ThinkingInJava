@@ -20,7 +20,7 @@ public class SweetShop {
   public static void main(String[] args) {
     // new add
     try {
-        Class c = Class.forName(args[0]);
+        Class c = Class.forName("master.Chapter11.exercise." + args[0]);
         c.newInstance();
     } catch (ClassNotFoundException e){
         print("Not Found " + args[0]);
@@ -37,7 +37,7 @@ public class SweetShop {
     print("After creating Candy");
 
     try {
-      Class.forName("Gum");
+      Class.forName("master.Chapter11.exercise.Gum");
     } catch(ClassNotFoundException e) {
       print("Couldn't find Gum");
     }
