@@ -25,6 +25,40 @@ return getClass().getSimpleName();
         int n = rand.nextInt(partFactories.size());
         return partFactories.get(n).create();
     }
+
+
+    static List<Class<? extends Part>> partType = new ArrayList<Class<? extends Part>>();
+
+    static{
+        partType.add(FuelFilter.class);
+        partType.add(AirFilter.class);
+        partType.add(CabinAirFilter.class);
+        partType.add(OilFilter.class);
+        partType.add(FanBelt.class);
+        partType.add(PowerSteeringBelt.class);
+        partType.add(GeneratorBelt.class);
+    }
+
+    public static Part createObject()
+    {
+        Part object = null;
+
+        int n = rand.nextInt(partType.size());
+        try {
+            object = partType.get(n).newInstance();
+        }
+        catch (IllegalAccessException e)
+        {
+            throw new RuntimeException(e);
+        }
+        catch (InstantiationException e)
+        {
+            throw new RuntimeException(e);
+        }
+
+
+        return object;
+    }
 }	
 
 class Filter extends Part {}
@@ -83,8 +117,11 @@ class PowerSteeringBelt extends Belt {
 
 public class RegisteredFactories {
     public static void main(String[] args) {
+//        for(int i = 0; i < 10; i++)
+//          System.out.println(Part.createRandom());
+
         for(int i = 0; i < 10; i++)
-          System.out.println(Part.createRandom());
+            System.out.println(Part.createObject());
     }
 }
 /* Output:

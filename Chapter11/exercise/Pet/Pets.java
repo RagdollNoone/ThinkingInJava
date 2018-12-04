@@ -4,16 +4,18 @@ package master.Chapter11.exercise.Pet;
 import java.util.*;
 
 public class Pets {
-  public static final PetCreator creator = new LiteralPetCreator();
+//    public static final PetCreator creator = new LiteralPetCreator();
 
-  public static Pet randomPet() {
+    public static final PetCreator creator = new FactoryCreator();
+
+    public static Pet randomPet() {
     return creator.randomPet();
-  }
-  public static Pet[] createArray(int size) {
+    }
+    public static Pet[] createArray(int size) {
     return creator.createArray(size);
-  }
-  public static ArrayList<Pet> arrayList(int size) {
+    }
+    public static ArrayList<Pet> arrayList(int size) {
     return creator.arrayList(size);
-  }
+    }
 }
 ///:~

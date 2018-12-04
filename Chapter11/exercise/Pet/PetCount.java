@@ -39,8 +39,10 @@ public class PetCount {
     print(counter);
   }	
   public static void main(String[] args) {
-    countPets(new ForNameCreator());
+//      countPets(new ForNameCreator());
+    countPets(new FactoryCreator());
   }
+
 }
 /* Output:
 Rat Manx Cymric Mutt Pug Cymric Pug Manx Cymric Rat EgyptianMau Hamster EgyptianMau Mutt Mutt Cymric Mouse Pug Mouse Cymric
