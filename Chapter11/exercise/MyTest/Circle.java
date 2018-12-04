@@ -1,4 +1,4 @@
-package master.Chapter11;
+package master.Chapter11.exercise.MyTest;
 
 public class Circle
 implements Shape{

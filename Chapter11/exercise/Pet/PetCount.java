@@ -1,6 +1,7 @@
 //: typeinfo/PetCount.java
 // Using instanceof.
-package master.Chapter11.exercise;
+package master.Chapter11.exercise.Pet;
+
 import java.util.*;
 import static master.Common.Print.*;
 

@@ -1,6 +1,6 @@
 //: typeinfo/PetCount3.java
 // Using isInstance()
-package master.Chapter11.exercise;
+package master.Chapter11.exercise.Pet;
 import java.util.*;
 import master.Common.MapData;
 import static master.Common.Print.*;

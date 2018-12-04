@@ -1,10 +1,9 @@
-package master.Chapter11;
+package master.Chapter11.exercise.MyTest;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Enumeration;
 import java.util.Vector;
-import master.Common.Print;
 
 public class Application {
     private static Vector m_shapeVec = new Vector();

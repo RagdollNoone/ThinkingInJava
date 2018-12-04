@@ -1,4 +1,4 @@
-package master.Chapter11.exercise;
+package master.Chapter11.exercise.Pet;
 
 public class Individual implements Comparable<Individual> {
   private static long counter = 0;

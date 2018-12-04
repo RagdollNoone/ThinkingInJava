@@ -1,5 +1,5 @@
 //: typeinfo/PetCount4.java
-package master.Chapter11.exercise;
+package master.Chapter11.exercise.Pet;
 import master.Common.*;
 import static master.Common.Print.*;
 
