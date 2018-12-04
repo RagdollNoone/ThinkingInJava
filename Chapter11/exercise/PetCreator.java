@@ -11,6 +11,7 @@ public abstract class PetCreator {
 
   public Pet randomPet() { // Create one random Pet
     int n = rand.nextInt(types().size());
+
     try {
       return types().get(n).newInstance();
     } catch(InstantiationException e) {
@@ -18,12 +19,15 @@ public abstract class PetCreator {
     } catch(IllegalAccessException e) {
       throw new RuntimeException(e);
     }
+
   }	
 
   public Pet[] createArray(int size) {
     Pet[] result = new Pet[size];
+
     for(int i = 0; i < size; i++)
       result[i] = randomPet();
+
     return result;
   }
 

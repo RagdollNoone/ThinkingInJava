@@ -11,6 +11,7 @@ public class ForNameCreator extends PetCreator {
     "master.Chapter11.exercise.Gerbil",
   };
 
+
   @SuppressWarnings("unchecked")
   private static void loader() {
     try {
@@ -21,7 +22,12 @@ public class ForNameCreator extends PetCreator {
     }
   }
 
-  static { loader(); }
+
+  static {
+      loader();
+  }
+
 
   public List<Class<? extends Pet>> types() {return types;}
-} ///:~
+}
+///:~
