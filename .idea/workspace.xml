@@ -2,63 +2,154 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac03d18c-7fd0-487f-b720-ce319e3db71b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/SwingWorker/SwingWorkerWithProgressBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ThinkingInJava.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ThinkingInJava.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Candy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Candy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Coffee/Americano.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Coffee/Americano.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Coffee/Breve.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Coffee/Breve.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Coffee/Coffee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Coffee/Coffee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Coffee/CoffeeGenerator$CoffeeIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Coffee/CoffeeGenerator$CoffeeIterator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Coffee/CoffeeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Coffee/CoffeeGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Cookie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Cookie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/AirFilter$Factory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/AirFilter$Factory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/AirFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/AirFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/Belt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/Belt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/CabinAirFilter$Factory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/CabinAirFilter$Factory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/CabinAirFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/CabinAirFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/FanBelt$Factory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/FanBelt$Factory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/FanBelt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/FanBelt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/Filter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/Filter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/FuelFilter$Factory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/FuelFilter$Factory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/FuelFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/FuelFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/GeneratorBelt$Factory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/GeneratorBelt$Factory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/GeneratorBelt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/GeneratorBelt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/OilFilter$Factory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/OilFilter$Factory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/OilFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/OilFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/Part.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/Part.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/PowerSteeringBelt$Factory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/PowerSteeringBelt$Factory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/PowerSteeringBelt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/PowerSteeringBelt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/RegisteredFactories.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/RegisteredFactories.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/FancyToy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/FancyToy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Gum.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Gum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$1A.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$1A.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$1B.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$1B.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$1Base.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$1Base.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$1C.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$1C.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$2A.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$2A.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$2B.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$2B.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$2Base.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$2Base.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$3Base.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$3Base.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/Cat$Factory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/Cat$Factory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/Cat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/Cat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/FactoryCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/FactoryCreator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/ForNameCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/ForNameCreator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/Gerbil$Factory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/Gerbil$Factory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/Gerbil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/Gerbil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/Individual.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/Individual.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/Pet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/Pet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/PetCount$PetCounter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/PetCount$PetCounter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/PetCount.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/PetCount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/PetCount3$PetCounter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/PetCount3$PetCounter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/PetCount3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/PetCount3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/PetCount4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/PetCount4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/PetCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/PetCreator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/Pets.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/Pets.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/SweetShop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/SweetShop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Toy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/Toy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/ToyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Chapter11/exercise/ToyTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/HelloWorld/HelloWorldTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/HelloWorld/HelloWorldTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Candy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Circle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Coffee/Americano.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Coffee/Breve.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Coffee/Coffee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Coffee/CoffeeGenerator$CoffeeIterator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Coffee/CoffeeGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Cookie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/AirFilter$Factory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/AirFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/Belt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/CabinAirFilter$Factory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/CabinAirFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/Factory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/FanBelt$Factory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/FanBelt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/Filter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/FuelFilter$Factory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/FuelFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/GeneratorBelt$Factory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/GeneratorBelt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/OilFilter$Factory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/OilFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/Part.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/PowerSteeringBelt$Factory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/PowerSteeringBelt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Factory/RegisteredFactories.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/FancyToy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Gum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/HasBatteries.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$1A.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$1B.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$1Base.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$1C.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$2A.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$2B.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$2Base.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application$3Base.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Circle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Shape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Square.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/MyTest/Triangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/Cat$Factory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/Cat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/FactoryCreator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/ForNameCreator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/Gerbil$Factory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/Gerbil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/Individual.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/LiteralPetCreator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/Pet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/PetCount$PetCounter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/PetCount.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/PetCount2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/PetCount3$PetCounter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/PetCount3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/PetCount4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/PetCreator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Pet/Pets.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/RagdollCat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Rhomboid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Shape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Shapes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Shoots.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Square.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/SweetShop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Toy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/ToyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Triangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Chapter11/exercise/Waterproof.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/BasicGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/BinaryFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/CollectionData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/ContainerMethodDifferences.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/ConvertTo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/CountingGenerator$Boolean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/CountingGenerator$Byte.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/CountingGenerator$Character.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/CountingGenerator$Double.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/CountingGenerator$Float.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/CountingGenerator$Integer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/CountingGenerator$Long.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/CountingGenerator$Short.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/CountingGenerator$String.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/CountingGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/CountingIntegerList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/CountingMapData$Entry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/CountingMapData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/Countries$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/Countries$FlyweightMap$Entry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/Countries$FlyweightMap$EntrySet$Iter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/Countries$FlyweightMap$EntrySet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/Countries$FlyweightMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/Countries.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/DaemonThreadFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/DaemonThreadPoolExecutor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/Deque.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/Directory$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/Directory$TreeInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/Directory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/Enums.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/FiveTuple.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/FourTuple.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/Generated.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/Generator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/Hex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/MapData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/New.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/Null.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/OSExecute.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/OSExecuteException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/PPrint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/Pair.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/Print.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/ProcessFiles$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/ProcessFiles$Strategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/ProcessFiles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/RandomGenerator$Boolean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/RandomGenerator$Byte.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/RandomGenerator$Character.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/RandomGenerator$Double.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/RandomGenerator$Float.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/RandomGenerator$Integer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/RandomGenerator$Long.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/RandomGenerator$Short.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/RandomGenerator$String.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/RandomGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/Range.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/Sets.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/Stack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/SwingConsole$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/SwingConsole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/TaskItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/TaskManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/TextFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/ThreeTuple.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/Tuple.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/TwoTuple.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Common/TypeCounter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/HelloWorld/HelloWorldTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/SwingWorker/SwingWorkerWithProgressBar$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/SwingWorker/SwingWorkerWithProgressBar$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/SwingWorker/SwingWorkerWithProgressBar$ProgressBarRealized.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/SwingWorker/SwingWorkerWithProgressBar.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,34 +171,42 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HelloWorld/HelloWorldTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="85">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/ThinkingInJava.iml">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="5" selection-start-column="5" selection-end-column="5" />
+            <state relative-caret-position="204">
+              <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SwingWorker/SwingWorkerWithProgressBar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="939">
-              <caret line="88" column="53" lean-forward="true" selection-start-line="88" selection-start-column="53" selection-end-line="88" selection-end-column="53" />
+            <state relative-caret-position="731">
+              <caret line="54" column="43" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1597#1598#0" expanded="true" />
-                <element signature="e#1664#1665#0" expanded="true" />
-                <element signature="e#2204#2205#0" expanded="true" />
-                <element signature="e#2279#2280#0" expanded="true" />
-                <element signature="e#2351#2352#0" expanded="true" />
-                <element signature="e#2419#2420#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -164,8 +263,8 @@
         <option value="$PROJECT_DIR$/src/Chapter11/exercise/SweetShop.java" />
         <option value="$PROJECT_DIR$/src/Chapter11/exercise/ToyTest.java" />
         <option value="$PROJECT_DIR$/src/HelloWorld/HelloWorldTest.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/SwingWorker/SwingWorkerWithProgressBar.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -180,6 +279,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -190,18 +290,22 @@
             <path>
               <item name="ThinkingInJava" type="b2602c69:ProjectViewProjectNode" />
               <item name="ThinkingInJava" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ThinkingInJava" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ThinkingInJava" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554887370748" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554887602519" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -273,10 +377,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-11" width="1922" height="1212" extended-state="6" />
+    <frame x="0" y="-4" width="1920" height="1204" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14529915" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14690171" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -290,7 +394,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32992566" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32992566" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32992566" />
@@ -495,13 +599,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Chapter11/exercise/Pet/PetCount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Chapter11/exercise/Pet/PetCount2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -573,20 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HelloWorld/HelloWorldTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/javax/swing/SwingWorker.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
@@ -594,19 +677,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Chapter11/exercise/Pet/PetCount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SwingWorker/SwingWorkerWithProgressBar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="939">
-          <caret line="88" column="53" lean-forward="true" selection-start-line="88" selection-start-column="53" selection-end-line="88" selection-end-column="53" />
+        <state relative-caret-position="731">
+          <caret line="54" column="43" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1597#1598#0" expanded="true" />
-            <element signature="e#1664#1665#0" expanded="true" />
-            <element signature="e#2204#2205#0" expanded="true" />
-            <element signature="e#2279#2280#0" expanded="true" />
-            <element signature="e#2351#2352#0" expanded="true" />
-            <element signature="e#2419#2420#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/ThinkingInJava.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HelloWorld/HelloWorldTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -667,7 +775,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
