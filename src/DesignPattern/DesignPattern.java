@@ -1,13 +1,12 @@
 package DesignPattern;
 
-import DesignPattern.DecoratorPattern.Beverage;
-import DesignPattern.DecoratorPattern.DarkRoast;
-import DesignPattern.DecoratorPattern.Milk;
-import DesignPattern.DecoratorPattern.Mocha;
+import DesignPattern.DecoratorPattern.*;
 import DesignPattern.ObserverPattern.CurrentConditionDisplay;
 import DesignPattern.ObserverPattern.CurrentConditionDisplayObserver;
 import DesignPattern.ObserverPattern.WeatherData;
 import DesignPattern.ObserverPattern.WeatherDataObservable;
+
+import java.util.ArrayList;
 
 public class DesignPattern {
     public static void main(String[] args) {
@@ -33,12 +32,17 @@ public class DesignPattern {
 
         Beverage darkRoast = new DarkRoast();
         Beverage darkRoastWithMilk = new Milk(darkRoast);
-        Beverage darkRoastWithMilkAndMocha = new Mocha(darkRoastWithMilk);
+        Beverage darkRoastWithDoubleMilk = new Milk(darkRoastWithMilk);
+        Beverage darkRoastWithDoubleMilkAndMocha = new Mocha(darkRoastWithDoubleMilk);
 
-        float cost = darkRoastWithMilkAndMocha.cost();
-        String description = darkRoastWithMilkAndMocha.getDescription();
+        float cost = darkRoastWithDoubleMilkAndMocha.cost();
+        String description = darkRoastWithDoubleMilkAndMocha.getDescription();
 
         System.out.println("cost value is " + cost);
         System.out.println("description is " + description);
+
+        ArrayList<String> descriptionArrayList = new ArrayList<>();
+        darkRoastWithDoubleMilkAndMocha.getPrettyDescription(descriptionArrayList);
+        System.out.println(CondimentDecorator.printPrettyDescription(descriptionArrayList));
     }
 }

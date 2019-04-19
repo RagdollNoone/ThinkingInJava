@@ -1,5 +1,7 @@
 package DesignPattern.DecoratorPattern;
 
+import java.util.ArrayList;
+
 public class Milk extends CondimentDecorator {
     public Milk(Beverage beverage) {
         super("Milk", beverage);
@@ -13,5 +15,11 @@ public class Milk extends CondimentDecorator {
     @Override
     public String getDescription() {
         return this.beverage.getDescription() + " With Milk";
+    }
+
+    @Override
+    public void getPrettyDescription(ArrayList<String> descriptionArrayList) {
+        this.beverage.getPrettyDescription(descriptionArrayList);
+        descriptionArrayList.add("Milk");
     }
 }

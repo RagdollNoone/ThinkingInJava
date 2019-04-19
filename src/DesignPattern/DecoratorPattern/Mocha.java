@@ -1,5 +1,7 @@
 package DesignPattern.DecoratorPattern;
 
+import java.util.ArrayList;
+
 public class Mocha extends CondimentDecorator {
     public Mocha(Beverage beverage) {
         super("Mocha", beverage);
@@ -13,5 +15,11 @@ public class Mocha extends CondimentDecorator {
     @Override
     public String getDescription() {
         return this.beverage.getDescription() + " With Mocha";
+    }
+
+    @Override
+    public void getPrettyDescription(ArrayList<String> descriptionArrayList) {
+        this.beverage.getPrettyDescription(descriptionArrayList);
+        descriptionArrayList.add("Mocha");
     }
 }
