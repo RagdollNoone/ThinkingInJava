@@ -1,4 +1,4 @@
-package DesignPattern;
+package DesignPattern.ObserverPattern;
 
 public class CurrentConditionDisplay implements Observer, DisplayElement{
     private float temperature;
@@ -12,16 +12,18 @@ public class CurrentConditionDisplay implements Observer, DisplayElement{
     }
 
     @Override
-    public void update(float temperature, float humidity, float pressure) {
-        this.temperature = temperature;
-        this.humidty = humidity;
+    public void update(Subject subject, Object args) {
+        if (subject instanceof WeatherData) {
+            this.temperature = weatherData.getTemperature();
+            this.humidty = weatherData.getHumidity();
 
-        display();
+            display();
+        }
     }
 
     @Override
     public void display() {
         System.out.println("CurrentConditionDisplay temperature: " + temperature
-        + " humidity: " + humidty);
+                + " humidity: " + humidty);
     }
 }

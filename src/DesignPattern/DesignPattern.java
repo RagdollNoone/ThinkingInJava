@@ -1,6 +1,9 @@
 package DesignPattern;
 
-import DesignPattern.StrategyPattern.*;
+import DesignPattern.ObserverPattern.CurrentConditionDisplay;
+import DesignPattern.ObserverPattern.CurrentConditionDisplayObserver;
+import DesignPattern.ObserverPattern.WeatherData;
+import DesignPattern.ObserverPattern.WeatherDataObservable;
 
 public class DesignPattern {
     public static void main(String[] args) {
@@ -16,9 +19,12 @@ public class DesignPattern {
 //        modelDuck.performQuack();
 
 
-        WeatherData weatherData = new WeatherData();
-        CurrentConditionDisplay currentConditionDisplay = new CurrentConditionDisplay(weatherData);
+//        WeatherData weatherData = new WeatherData();
+//        CurrentConditionDisplay currentConditionDisplay = new CurrentConditionDisplay(weatherData);
+//        weatherData.setMeasurements(15, 20, 25);
 
-        weatherData.setMeasurements(15, 20, 25);
+//        WeatherDataObservable weatherDataObservable = new WeatherDataObservable();
+//        CurrentConditionDisplayObserver currentConditionDisplayObserver = new CurrentConditionDisplayObserver(weatherDataObservable);
+//        weatherDataObservable.setMeasurements(15, 20, 25);
     }
 }
