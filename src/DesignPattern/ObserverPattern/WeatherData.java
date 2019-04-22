@@ -1,7 +1,9 @@
 package DesignPattern.ObserverPattern;
 
-
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 public class WeatherData implements Subject {
     private float temperature;
@@ -9,11 +11,14 @@ public class WeatherData implements Subject {
     private float pressure;
 
     private ArrayList<Observer> observerArrayList;
+    private Tree<Observer> observerTree;
+    private Queue<Node<Observer>> travelSupport;
 
     private boolean hasChanged = false;
 
     public WeatherData() {
         observerArrayList = new ArrayList<Observer>();
+        travelSupport = new LinkedList<>();
     }
 
     @Override
@@ -34,6 +39,30 @@ public class WeatherData implements Subject {
         }
     }
 
+    @Override
+    public void notifyObserversTree() {
+        if (null != observerTree) {
+            travelSupport.add(observerTree.getRoot());
+
+            while (travelSupport.size() != 0) {
+                Node<Observer> currentTravelNode = travelSupport.poll();
+
+                if (currentTravelNode.hasChildren()) {
+                    List<Node<Observer>> currentChildren = currentTravelNode.getChildren();
+
+                    for (int i = 0; i < currentChildren.size(); i++) {
+                        travelSupport.add(currentChildren.get(i));
+                    }
+                }
+
+                if (null != currentTravelNode.getData())
+                    currentTravelNode.getData().update(this, null);
+            }
+        }
+
+        observerTree = null;
+    }
+
     public void setMeasurements(float temperature, float humidity, float pressure) {
         this.temperature = temperature;
         this.humidity = humidity;
@@ -44,6 +73,8 @@ public class WeatherData implements Subject {
 
     private void measurementsChanged() {
         notifyObservers();
+
+        notifyObserversTree();
     }
 
     public float getTemperature() {
@@ -64,5 +95,9 @@ public class WeatherData implements Subject {
 
     public boolean isHasChanged() {
         return hasChanged;
+    }
+
+    public void setObserverTree(Tree<Observer> observerTree) {
+        this.observerTree = observerTree;
     }
 }
