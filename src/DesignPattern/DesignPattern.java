@@ -1,12 +1,8 @@
 package DesignPattern;
 
-import DesignPattern.DecoratorPattern.*;
-import DesignPattern.ObserverPattern.*;
-
-import DesignPattern.ObserverPattern.Node;
-
-import java.io.*;
-import java.util.ArrayList;
+import DesignPattern.FactoryPattern.FactoryMethod.ChicagoPizzaStore;
+import DesignPattern.FactoryPattern.FactoryMethod.NYPizzaStore;
+import DesignPattern.FactoryPattern.FactoryMethod.PizzaStore;
 
 public class DesignPattern {
     public static void main(String[] args) {
@@ -68,21 +64,21 @@ public class DesignPattern {
 //        weatherData.setMeasurements(15, 20, 25);
 
         // Decorator Pattern
-        Beverage darkRoast = new DarkRoast();
-        Beverage darkRoastWithMilk = new Milk(darkRoast);
-        Beverage darkRoastWithDoubleMilk = new Milk(darkRoastWithMilk);
-        Beverage darkRoastWithDoubleMilkAndMocha = new Mocha(darkRoastWithDoubleMilk);
-        Beverage darkRoastWithDoubleMilkAndMochaSizeTall = new Tall(darkRoastWithDoubleMilkAndMocha);
-
-        float cost = darkRoastWithDoubleMilkAndMochaSizeTall.cost();
-        String description = darkRoastWithDoubleMilkAndMochaSizeTall.getDescription();
-
-        System.out.println("cost value is " + cost);
-        System.out.println("description is " + description);
-
-        ArrayList<String> descriptionArrayList = new ArrayList<>();
-        darkRoastWithDoubleMilkAndMochaSizeTall.getPrettyDescription(descriptionArrayList);
-        System.out.println(CondimentDecorator.printPrettyDescription(descriptionArrayList));
+//        Beverage darkRoast = new DarkRoast();
+//        Beverage darkRoastWithMilk = new Milk(darkRoast);
+//        Beverage darkRoastWithDoubleMilk = new Milk(darkRoastWithMilk);
+//        Beverage darkRoastWithDoubleMilkAndMocha = new Mocha(darkRoastWithDoubleMilk);
+//        Beverage darkRoastWithDoubleMilkAndMochaSizeTall = new Tall(darkRoastWithDoubleMilkAndMocha);
+//
+//        float cost = darkRoastWithDoubleMilkAndMochaSizeTall.cost();
+//        String description = darkRoastWithDoubleMilkAndMochaSizeTall.getDescription();
+//
+//        System.out.println("cost value is " + cost);
+//        System.out.println("description is " + description);
+//
+//        ArrayList<String> descriptionArrayList = new ArrayList<>();
+//        darkRoastWithDoubleMilkAndMochaSizeTall.getPrettyDescription(descriptionArrayList);
+//        System.out.println(CondimentDecorator.printPrettyDescription(descriptionArrayList));
 
 //        int c;
 //        try {
@@ -101,5 +97,25 @@ public class DesignPattern {
 //        catch (IOException e) {
 //            e.printStackTrace();
 //        }
+
+        // Factory Pattern
+//        SimplePizzaFactory instance = SimplePizzaFactory.getInstance();
+//        PizzaStoreForSimplePizzaFactory pizzaStoreForSimplePizzaFactory = new PizzaStoreForSimplePizzaFactory(instance);
+//        pizzaStoreForSimplePizzaFactory.orderPizza("cheese");
+//        pizzaStoreForSimplePizzaFactory.orderPizza("clam");
+
+        // 这是个错误的示范
+//        NYSimplePizzaFactory instance = (NYSimplePizzaFactory)SimplePizzaFactory.getInstance();
+//        PizzaStoreForSimplePizzaFactory pizzaStoreForSimplePizzaFactory = new PizzaStoreForSimplePizzaFactory(instance);
+//        pizzaStoreForSimplePizzaFactory.orderPizza("cheese");
+//        pizzaStoreForSimplePizzaFactory.orderPizza("clam");
+
+        PizzaStore nyPizzaStore = new NYPizzaStore();
+        nyPizzaStore.orederPizza("cheese");
+        nyPizzaStore.orederPizza("clam");
+        PizzaStore chicagoPizza = new ChicagoPizzaStore();
+        chicagoPizza.orederPizza("cheese");
+        chicagoPizza.orederPizza("clam");
+
     }
 }
