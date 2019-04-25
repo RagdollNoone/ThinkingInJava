@@ -3,6 +3,8 @@ package DesignPattern;
 import DesignPattern.FactoryPattern.AbstractFactory.ChicagoPizzaStore;
 import DesignPattern.FactoryPattern.AbstractFactory.NYPizzaStore;
 import DesignPattern.FactoryPattern.AbstractFactory.PizzaStore;
+import DesignPattern.SingletonPattern.HotterSingleton;
+import DesignPattern.SingletonPattern.Singleton;
 
 public class DesignPattern {
     public static void main(String[] args) {
@@ -117,12 +119,15 @@ public class DesignPattern {
 //        chicagoPizzaStore.orederPizza("cheese");
 //        chicagoPizzaStore.orederPizza("clam");
 
-        PizzaStore nyPizzaStore = new NYPizzaStore();
-        nyPizzaStore.orderPizza("cheese");
-        nyPizzaStore.orderPizza("clam");
-        PizzaStore chicagoPizzaStore = new ChicagoPizzaStore();
-        chicagoPizzaStore.orderPizza("cheese");
-        chicagoPizzaStore.orderPizza("clam");
+//        PizzaStore nyPizzaStore = new NYPizzaStore();
+//        nyPizzaStore.orderPizza("cheese");
+//        nyPizzaStore.orderPizza("clam");
+//        PizzaStore chicagoPizzaStore = new ChicagoPizzaStore();
+//        chicagoPizzaStore.orderPizza("cheese");
+//        chicagoPizzaStore.orderPizza("clam");
 
+        // Singleton
+        Singleton hotter = HotterSingleton.getInstance();
+        System.out.println(hotter.toString());
     }
 }
