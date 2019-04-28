@@ -1,5 +1,6 @@
 package DesignPattern;
 
+import DesignPattern.CommandPattern.*;
 import DesignPattern.FactoryPattern.AbstractFactory.ChicagoPizzaStore;
 import DesignPattern.FactoryPattern.AbstractFactory.NYPizzaStore;
 import DesignPattern.FactoryPattern.AbstractFactory.PizzaStore;
@@ -127,7 +128,34 @@ public class DesignPattern {
 //        chicagoPizzaStore.orderPizza("clam");
 
         // Singleton
-        Singleton hotter = HotterSingleton.getInstance();
-        System.out.println(hotter.toString());
+//        Singleton hotter = HotterSingleton.getInstance();
+//        System.out.println(hotter.toString());
+
+        // Command
+        RemoteControl remoteControl = new RemoteControl();
+        Light light = new Light();
+        CeilingFan ceilingFan = new CeilingFan();
+
+        Command lightOnCommand = new LightOnCommand(light);
+        Command lightOffCommand = new LightOffCommand(light);
+
+        Command ceilingFanOffCommand = new CeilingFanOffCommand(ceilingFan);
+        Command ceilingFanLowCommand = new CeilingFanLowCommand(ceilingFan);
+        Command ceilingFanMediumCommand = new CeilingFanMediumCommand(ceilingFan);
+        Command ceilingFanHighCommand = new CeilingFanHighCommand(ceilingFan);
+
+        Command[] commandsOn = {lightOnCommand, ceilingFanLowCommand, ceilingFanMediumCommand, ceilingFanHighCommand};
+        Command[] commandsOff = {ceilingFanMediumCommand, ceilingFanLowCommand, ceilingFanOffCommand, lightOffCommand};
+
+        Command macroCommandOn = new MacroCommand(commandsOn);
+        Command macroCommandOff = new MacroCommand(commandsOff);
+
+        remoteControl.setCommand((byte)0, macroCommandOn, macroCommandOff);
+
+        remoteControl.pressOn((byte)0);
+        remoteControl.pressUndo();
+        remoteControl.pressOn((byte)0);
+        remoteControl.pressOff((byte)0);
+        remoteControl.pressUndo();
     }
 }
