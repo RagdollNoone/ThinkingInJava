@@ -1,11 +1,18 @@
 package DesignPattern;
 
+import DesignPattern.AdapterPattern.*;
 import DesignPattern.CommandPattern.*;
+import DesignPattern.FacadePattern.Amplifier;
+import DesignPattern.FacadePattern.DvdPlayer;
+import DesignPattern.FacadePattern.HomeTheaterFacade;
+import DesignPattern.FacadePattern.Screen;
 import DesignPattern.FactoryPattern.AbstractFactory.ChicagoPizzaStore;
 import DesignPattern.FactoryPattern.AbstractFactory.NYPizzaStore;
 import DesignPattern.FactoryPattern.AbstractFactory.PizzaStore;
 import DesignPattern.SingletonPattern.HotterSingleton;
 import DesignPattern.SingletonPattern.Singleton;
+
+import java.util.ArrayList;
 
 public class DesignPattern {
     public static void main(String[] args) {
@@ -127,35 +134,60 @@ public class DesignPattern {
 //        chicagoPizzaStore.orderPizza("cheese");
 //        chicagoPizzaStore.orderPizza("clam");
 
-        // Singleton
+        // Singleton Pattern
 //        Singleton hotter = HotterSingleton.getInstance();
 //        System.out.println(hotter.toString());
 
-        // Command
-        RemoteControl remoteControl = new RemoteControl();
-        Light light = new Light();
-        CeilingFan ceilingFan = new CeilingFan();
+        // Command Pattern
+//        RemoteControl remoteControl = new RemoteControl();
+//        Light light = new Light();
+//        CeilingFan ceilingFan = new CeilingFan();
+//
+//        Command lightOnCommand = new LightOnCommand(light);
+//        Command lightOffCommand = new LightOffCommand(light);
+//
+//        Command ceilingFanOffCommand = new CeilingFanOffCommand(ceilingFan);
+//        Command ceilingFanLowCommand = new CeilingFanLowCommand(ceilingFan);
+//        Command ceilingFanMediumCommand = new CeilingFanMediumCommand(ceilingFan);
+//        Command ceilingFanHighCommand = new CeilingFanHighCommand(ceilingFan);
+//
+//        Command[] commandsOn = {lightOnCommand, ceilingFanLowCommand, ceilingFanMediumCommand, ceilingFanHighCommand};
+//        Command[] commandsOff = {ceilingFanMediumCommand, ceilingFanLowCommand, ceilingFanOffCommand, lightOffCommand};
+//
+//        Command macroCommandOn = new MacroCommand(commandsOn);
+//        Command macroCommandOff = new MacroCommand(commandsOff);
+//
+//        remoteControl.setCommand((byte)0, macroCommandOn, macroCommandOff);
+//
+//        remoteControl.pressOn((byte)0);
+//        remoteControl.pressUndo();
+//        remoteControl.pressOn((byte)0);
+//        remoteControl.pressOff((byte)0);
+//        remoteControl.pressUndo();
 
-        Command lightOnCommand = new LightOnCommand(light);
-        Command lightOffCommand = new LightOffCommand(light);
+        // Adapter Pattern
+//        Duck mallardDuck = new MallardDuck();
+//        Turkey wildTurkey = new WildTurkey();
+//
+//        DuckAdapter duckAdapter = new DuckAdapter(wildTurkey);
+//        TurkeyAdapter turkeyAdapter = new TurkeyAdapter(mallardDuck);
+//
+//        duckAdapter.quack();
+//        duckAdapter.fly();
+//
+//        turkeyAdapter.gobble();
+//        turkeyAdapter.fly();
 
-        Command ceilingFanOffCommand = new CeilingFanOffCommand(ceilingFan);
-        Command ceilingFanLowCommand = new CeilingFanLowCommand(ceilingFan);
-        Command ceilingFanMediumCommand = new CeilingFanMediumCommand(ceilingFan);
-        Command ceilingFanHighCommand = new CeilingFanHighCommand(ceilingFan);
-
-        Command[] commandsOn = {lightOnCommand, ceilingFanLowCommand, ceilingFanMediumCommand, ceilingFanHighCommand};
-        Command[] commandsOff = {ceilingFanMediumCommand, ceilingFanLowCommand, ceilingFanOffCommand, lightOffCommand};
-
-        Command macroCommandOn = new MacroCommand(commandsOn);
-        Command macroCommandOff = new MacroCommand(commandsOff);
-
-        remoteControl.setCommand((byte)0, macroCommandOn, macroCommandOff);
-
-        remoteControl.pressOn((byte)0);
-        remoteControl.pressUndo();
-        remoteControl.pressOn((byte)0);
-        remoteControl.pressOff((byte)0);
-        remoteControl.pressUndo();
+        // Facade Pattern
+//        Amplifier amplifier = new Amplifier();
+//        DvdPlayer dvdPlayer = new DvdPlayer();
+//        Screen screen = new Screen();
+//
+//        HomeTheaterFacade homeTheaterFacade =
+//                new HomeTheaterFacade(amplifier,
+//                        dvdPlayer, screen);
+//
+//        homeTheaterFacade.playMovie();
+//        homeTheaterFacade.endMovie();
     }
 }
