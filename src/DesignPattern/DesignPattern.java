@@ -11,6 +11,9 @@ import DesignPattern.FactoryPattern.AbstractFactory.NYPizzaStore;
 import DesignPattern.FactoryPattern.AbstractFactory.PizzaStore;
 import DesignPattern.SingletonPattern.HotterSingleton;
 import DesignPattern.SingletonPattern.Singleton;
+import DesignPattern.TemplateMethodPattern.CaffeineBeverage;
+import DesignPattern.TemplateMethodPattern.Coffee;
+import DesignPattern.TemplateMethodPattern.Tea;
 
 import java.util.ArrayList;
 
@@ -189,5 +192,11 @@ public class DesignPattern {
 //
 //        homeTheaterFacade.playMovie();
 //        homeTheaterFacade.endMovie();
+
+        // TemplateMethod Pattern
+        CaffeineBeverage tea = new Tea();
+        CaffeineBeverage coffee = new Coffee();
+        tea.prepareRecipe();
+        coffee.prepareRecipe();
     }
 }
