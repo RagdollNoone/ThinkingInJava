@@ -9,6 +9,7 @@ import DesignPattern.FacadePattern.Screen;
 import DesignPattern.FactoryPattern.AbstractFactory.ChicagoPizzaStore;
 import DesignPattern.FactoryPattern.AbstractFactory.NYPizzaStore;
 import DesignPattern.FactoryPattern.AbstractFactory.PizzaStore;
+import DesignPattern.IteratorPattern.Waitress;
 import DesignPattern.SingletonPattern.HotterSingleton;
 import DesignPattern.SingletonPattern.Singleton;
 
@@ -189,5 +190,9 @@ public class DesignPattern {
 //
 //        homeTheaterFacade.playMovie();
 //        homeTheaterFacade.endMovie();
+
+        // Iterator Pattern
+        Waitress waitress = new Waitress();
+        waitress.printMenu();
     }
 }
