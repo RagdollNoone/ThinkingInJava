@@ -9,11 +9,14 @@ import DesignPattern.FacadePattern.Screen;
 import DesignPattern.FactoryPattern.AbstractFactory.ChicagoPizzaStore;
 import DesignPattern.FactoryPattern.AbstractFactory.NYPizzaStore;
 import DesignPattern.FactoryPattern.AbstractFactory.PizzaStore;
+import DesignPattern.IteratorPattern.Waitress;
 import DesignPattern.SingletonPattern.HotterSingleton;
 import DesignPattern.SingletonPattern.Singleton;
 import DesignPattern.TemplateMethodPattern.CaffeineBeverage;
 import DesignPattern.TemplateMethodPattern.Coffee;
 import DesignPattern.TemplateMethodPattern.Tea;
+
+import DesignPattern.StatePattern.GumballMachine;
 
 import java.util.ArrayList;
 
@@ -194,9 +197,31 @@ public class DesignPattern {
 //        homeTheaterFacade.endMovie();
 
         // TemplateMethod Pattern
-        CaffeineBeverage tea = new Tea();
-        CaffeineBeverage coffee = new Coffee();
-        tea.prepareRecipe();
-        coffee.prepareRecipe();
+        // CaffeineBeverage tea = new Tea();
+        // CaffeineBeverage coffee = new Coffee();
+        // tea.prepareRecipe();
+        // coffee.prepareRecipe();
+
+        // Iterator Pattern
+//        Waitress waitress = new Waitress();
+//        waitress.printMenu();
+
+        // State Pattern
+        // GumballMachine gumballMachine = new GumballMachine(3);
+        // gumballMachine.insertQuarter();
+        // gumballMachine.insertQuarter();
+        // gumballMachine.ejectQuarter();
+        //
+        // for (int i = 0; i < 3; i++) {
+        //     gumballMachine.insertQuarter();
+        //     gumballMachine.turnCrank();
+        //     System.out.println("Count is " + gumballMachine.getCount());
+        // }
+        //
+        // gumballMachine.insertQuarter();
+        // gumballMachine.ejectQuarter();
+        // gumballMachine.turnCrank();
+
+
     }
 }
