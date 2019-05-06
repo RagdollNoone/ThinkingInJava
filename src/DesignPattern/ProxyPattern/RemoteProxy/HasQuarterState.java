@@ -1,4 +1,4 @@
-//package DesignPattern.ProxyPattern;
+//package DesignPattern.ProxyPattern.RemoteProxy;
 
 public class HasQuarterState implements State {
     private static final long serialVersionUID = 1L;

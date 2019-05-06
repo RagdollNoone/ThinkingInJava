@@ -10,6 +10,7 @@ import DesignPattern.FactoryPattern.AbstractFactory.ChicagoPizzaStore;
 import DesignPattern.FactoryPattern.AbstractFactory.NYPizzaStore;
 import DesignPattern.FactoryPattern.AbstractFactory.PizzaStore;
 import DesignPattern.IteratorPattern.Waitress;
+import DesignPattern.ProxyPattern.VirtualProxy.VirtualProxy;
 import DesignPattern.SingletonPattern.HotterSingleton;
 import DesignPattern.SingletonPattern.Singleton;
 import DesignPattern.TemplateMethodPattern.CaffeineBeverage;
@@ -18,6 +19,7 @@ import DesignPattern.TemplateMethodPattern.Tea;
 
 import DesignPattern.StatePattern.GumballMachine;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 public class DesignPattern {
@@ -222,6 +224,11 @@ public class DesignPattern {
         // gumballMachine.ejectQuarter();
         // gumballMachine.turnCrank();
 
-
+        // Proxy Pattern
+        try {
+            VirtualProxy vp = new VirtualProxy();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

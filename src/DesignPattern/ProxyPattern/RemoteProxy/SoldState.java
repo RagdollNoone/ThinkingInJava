@@ -1,4 +1,4 @@
-//package DesignPattern.ProxyPattern;
+//package DesignPattern.ProxyPattern.RemoteProxy;
 
 public class SoldState implements State {
     private static final long serialVersionUID = 1L;
