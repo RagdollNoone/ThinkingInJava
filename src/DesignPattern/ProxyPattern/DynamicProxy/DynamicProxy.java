@@ -27,11 +27,11 @@ public class DynamicProxy {
         System.out.println("Name is " + nonOwnerProxy.getName());
         try {
             System.out.println("Interests set from nonOwner proxy");
-            nonOwnerProxy.setInterests("bowling, Go");
+            nonOwnerProxy.setInterests("cars, computers, music");
         } catch (Exception e) {
             System.out.println("Can't set interests from non owner proxy");
         }
-        nonOwnerProxy.getInterests();
+        System.out.println("interests get from non owner proxy " + nonOwnerProxy.getInterests());
         nonOwnerProxy.setHotOrNotRating(3);
         System.out.println("Rating set from non owner proxy");
         System.out.println("Rating is " + nonOwnerProxy.getHotOrNotRating());

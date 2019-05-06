@@ -18,7 +18,7 @@ public class NonOwnerInvocationHandler implements InvocationHandler {
             } else if (method.getName().equals("setHotOrNotRating")) {
                 return method.invoke(personBean, args);
             } else if (method.getName().startsWith("set")) {
-                return new IllegalAccessException();
+                throw  new IllegalAccessException();
             }
         } catch (Exception e) {
 //            e.printStackTrace();
