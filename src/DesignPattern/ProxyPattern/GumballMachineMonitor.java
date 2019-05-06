@@ -1,4 +1,4 @@
-package DesignPattern.ProxyPattern;
+//package DesignPattern.ProxyPattern;
 
 import java.rmi.RemoteException;
 
