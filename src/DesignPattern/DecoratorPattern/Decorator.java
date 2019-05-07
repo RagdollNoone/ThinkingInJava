@@ -39,7 +39,7 @@ public abstract class Decorator extends Beverage {
 
         for (Map.Entry<String, Integer> entry : prettyPrintSupportMap.entrySet()) {
             if (entry.getKey().equals("Tall") || entry.getKey().equals("Venti") || entry.getKey().equals("Grande"))
-                result = entry.getKey() + " ";
+                result = entry.getKey() + " " + result;
             else {
                 result = result + entry.getValue() + " " + entry.getKey() + " ";
             }

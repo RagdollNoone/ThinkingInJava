@@ -2,6 +2,7 @@ package DesignPattern;
 
 import DesignPattern.AdapterPattern.*;
 import DesignPattern.CommandPattern.*;
+import DesignPattern.DecoratorPattern.*;
 import DesignPattern.FacadePattern.Amplifier;
 import DesignPattern.FacadePattern.DvdPlayer;
 import DesignPattern.FacadePattern.HomeTheaterFacade;
@@ -84,19 +85,19 @@ public class DesignPattern {
 
         // Decorator Pattern
 //        Beverage darkRoast = new DarkRoast();
-//        Beverage darkRoastWithMilk = new Milk(darkRoast);
-//        Beverage darkRoastWithDoubleMilk = new Milk(darkRoastWithMilk);
-//        Beverage darkRoastWithDoubleMilkAndMocha = new Mocha(darkRoastWithDoubleMilk);
-//        Beverage darkRoastWithDoubleMilkAndMochaSizeTall = new Tall(darkRoastWithDoubleMilkAndMocha);
+//        darkRoast = new Milk(darkRoast);
+//        darkRoast = new Milk(darkRoast);
+//        darkRoast = new Mocha(darkRoast);
+//        darkRoast = new Tall(darkRoast);
 //
-//        float cost = darkRoastWithDoubleMilkAndMochaSizeTall.cost();
-//        String description = darkRoastWithDoubleMilkAndMochaSizeTall.getDescription();
+//        float cost = darkRoast.cost();
+//        String description = darkRoast.getDescription();
 //
 //        System.out.println("cost value is " + cost);
 //        System.out.println("description is " + description);
 //
 //        ArrayList<String> descriptionArrayList = new ArrayList<>();
-//        darkRoastWithDoubleMilkAndMochaSizeTall.getPrettyDescription(descriptionArrayList);
+//        darkRoast.getPrettyDescription(descriptionArrayList);
 //        System.out.println(CondimentDecorator.printPrettyDescription(descriptionArrayList));
 
 //        int c;
@@ -232,7 +233,7 @@ public class DesignPattern {
 //            e.printStackTrace();
 //        }
 
-        DynamicProxy dp = new DynamicProxy();
-        dp.drive();
+//        DynamicProxy dp = new DynamicProxy();
+//        dp.drive();
     }
 }
