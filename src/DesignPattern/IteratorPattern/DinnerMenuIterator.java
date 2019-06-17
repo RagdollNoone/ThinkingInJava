@@ -27,4 +27,9 @@ public class DinnerMenuIterator implements Iterator {
             return null;
         }
     }
+
+    @Override
+    public void remove() {
+
+    }
 }

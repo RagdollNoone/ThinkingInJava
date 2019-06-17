@@ -26,4 +26,9 @@ public class LaunchMenuIterator implements Iterator {
             return null;
         }
     }
+
+    @Override
+    public void remove() {
+
+    }
 }
