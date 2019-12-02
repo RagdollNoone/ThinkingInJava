@@ -1,3 +1,5 @@
+package DesignPattern.ProxyPattern.test;
+
 import java.rmi.*;
 
 public class Client{
