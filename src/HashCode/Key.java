@@ -16,7 +16,8 @@ public class Key {
     @Override
     public int hashCode() {
 //        return super.hashCode();
-        return (this.key * this.key) % 5;
+        return key.hashCode();
+//        return (this.key * this.key) % 5;
     }
 
     @Override
@@ -37,6 +38,11 @@ public class Key {
         Key k1 = new Key(1);
         Key k2 = k1;
         Key k3 = new Key(1);
+
+        System.out.println("k1 = " + k1.hashCode());
+        System.out.println("k2 = " + k2.hashCode());
+        System.out.println("k3 = " + k3.hashCode());
+
 
         hm.put(k1, "String value of k1");
         System.out.println("k2 = " + hm.get(k2));
