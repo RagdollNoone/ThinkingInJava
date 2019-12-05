@@ -5,7 +5,7 @@ public class Singleton {
         private static Singleton instance = new Singleton();
     }
 
-    private Singleton() {}
+    protected Singleton() {}
 
     public Singleton getInstance() { return SingleHolder.instance; }
 
@@ -18,7 +18,7 @@ public class Singleton {
 //public class Singleton {
 //    private volatile static Singleton instance;
 //
-//    private Singleton() {}
+//    protected Singleton() {}
 //
 //    public static Singleton getInstance() {
 //        if (null == instance) {
@@ -41,7 +41,7 @@ public class Singleton {
 //public class Singleton {
 //    private final static Singleton instance = new Singleton();
 //
-//    private Singleton() {}
+//    protected Singleton() {}
 //
 //    public Singleton getInstance() { return instance; }
 //}
