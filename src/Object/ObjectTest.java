@@ -2,54 +2,27 @@ package Object;
 
 public class ObjectTest implements Cloneable {
     // clone Test
-    private class cloneData implements Cloneable{
-        private String name;
-        private int age;
+    private CloneData cd;
 
-        public cloneData() {
-            this.name = "Dendy";
-            this.age = 29;
-        }
-
-        public int getAge() {
-            return age;
-        }
-
-        public void setAge(int age) {
-            this.age = age;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        @Override
-        protected cloneData clone() throws CloneNotSupportedException {
-            cloneData cd = (cloneData) super.clone();
-            this.age = cd.age;
-            this.name = cd.name;
-
-            return this;
-        }
-    }
-
-    private cloneData cd;
-
-    public cloneData getCd() {
+    public CloneData getCd() {
         return cd;
     }
 
+    public void setCd(CloneData cd) {
+        this.cd = cd;
+    }
+
     public ObjectTest() {
-        this.cd = new cloneData();
+        this.cd = new CloneData();
     }
 
     @Override
     protected ObjectTest clone() throws CloneNotSupportedException {
-        return (ObjectTest) super.clone();
+        ObjectTest ret = (ObjectTest) super.clone();
+        CloneData cdClone = this.cd.clone();
+        ret.setCd(cdClone);
+
+        return ret;
     }
 
     private static void testCase1() {
@@ -57,6 +30,7 @@ public class ObjectTest implements Cloneable {
         try {
             ObjectTest ot2 = ot1.clone();
             System.out.println("ot1 == ot2 ? " + ot1.equals(ot2));
+            System.out.println("ot1.cd == ot2.cd " + ot1.getCd().equals(ot2.getCd()));
 
             ot2.getCd().setAge(18);
             System.out.println("ot1.age == ot2.age ? " + (ot1.getCd().getAge() == ot2.getCd().getAge()));
