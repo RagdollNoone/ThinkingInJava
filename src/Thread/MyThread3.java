@@ -7,7 +7,7 @@ public class MyThread3 implements Callable<Integer> {
     public Integer call() {
         int sum = 0;
         for (int i = 0; i < 30; i++) {
-            System.out.println("====Thread3====" + i);
+            System.out.println("====Thread3==== " + i);
             sum += i;
         }
 
