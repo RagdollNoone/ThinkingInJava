@@ -1,4 +1,4 @@
-package Object;
+package Thread;
 
 public interface ConsumePublish {
     void addConsumer(Observer o);

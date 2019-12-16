@@ -1,4 +1,4 @@
-package Object;
+package Thread;
 
 public interface ProducePublish {
     void addProducer(Observer o);

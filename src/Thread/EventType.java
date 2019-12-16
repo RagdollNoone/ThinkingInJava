@@ -1,4 +1,4 @@
-package Object;
+package Thread;
 
 public enum EventType {
     CONSUME,

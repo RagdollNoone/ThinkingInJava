@@ -6,7 +6,8 @@ import java.lang.management.ThreadMXBean;
 import java.util.concurrent.FutureTask;
 
 public class ThreadTest {
-    public static void main(String[] args) throws InterruptedException{
+
+    private static void testCase1() throws InterruptedException {
         print();
 
         // 3 ways to construct thread
@@ -26,6 +27,24 @@ public class ThreadTest {
 
         print();
         System.out.println("Main thread is over, take time " + (System.currentTimeMillis() - startTime));
+    }
+
+    private static void testCase2() {
+        Producer producer = new Producer(1);
+        Thread p = new Thread(producer);
+        p.start();
+
+        for (int i = 0; i < 10; i++) {
+            Consumer consumer = new Consumer(i);
+            Thread c = new Thread(consumer);
+            c.start();
+        }
+    }
+
+    public static void main(String[] args) throws InterruptedException{
+//        testCase1();
+
+//        testCase2();
     }
 
 

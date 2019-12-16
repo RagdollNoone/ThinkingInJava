@@ -1,4 +1,4 @@
-package Object;
+package Thread;
 
 public class Producer implements Observer, Runnable {
     private int producerId;
