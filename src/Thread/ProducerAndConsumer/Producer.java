@@ -1,4 +1,4 @@
-package Thread;
+package Thread.ProducerAndConsumer;
 
 public class Producer implements Observer, Runnable {
     private int producerId;

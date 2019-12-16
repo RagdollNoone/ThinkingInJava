@@ -1,5 +1,12 @@
 package Thread;
 
+import Thread.ProducerAndConsumer.Consumer;
+import Thread.ProducerAndConsumer.Producer;
+import Thread.ThreadCreate.MyThread1;
+import Thread.ThreadCreate.MyThread2;
+import Thread.ThreadCreate.MyThread3;
+import Thread.ThreadLocal.ThreadLocalSimple;
+
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadInfo;
 import java.lang.management.ThreadMXBean;
@@ -41,10 +48,21 @@ public class ThreadTest {
         }
     }
 
+    private static void testCase3() {
+        ThreadLocalSimple simple = new ThreadLocalSimple();
+
+        for (int i = 0; i < 10; i++) {
+            Thread thread = new Thread(simple, "" + i);
+            thread.start();
+        }
+    }
+
     public static void main(String[] args) throws InterruptedException{
 //        testCase1();
 
 //        testCase2();
+
+        testCase3();
     }
 
 
