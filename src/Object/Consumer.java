@@ -2,8 +2,7 @@ package Object;
 
 import java.util.Random;
 
-public class Consumer implements Observer {
-    private Thread consumeThread;
+public class Consumer implements Observer, Runnable {
     private int cunsumerId;
 
     private final static int MAX = 5000;
@@ -15,23 +14,19 @@ public class Consumer implements Observer {
         buffer.addConsumer(this);
 
         this.cunsumerId = consumerId;
+    }
 
-        consumeThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    int randomValue = random.nextInt((MAX - MIN) + 1) + MIN;
-                    Thread.sleep(randomValue);
-                    while(!Buffer.getInstance().consume(cunsumerId)) {
+    @Override
+    public void run() {
+        try {
+            int randomValue = random.nextInt((MAX - MIN) + 1) + MIN;
+            Thread.sleep(randomValue);
+            while(!Buffer.getInstance().consume(cunsumerId)) {
 
-                    }
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
             }
-        });
-
-        consumeThread.start();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

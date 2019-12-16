@@ -96,6 +96,18 @@ public class ObjectTest implements Cloneable {
         t2.join();
     }
 
+    private static void testCase3() {
+        Producer producer = new Producer(1);
+        Thread p = new Thread(producer);
+        p.start();
+
+        for (int i = 0; i < 10; i++) {
+            Consumer consumer = new Consumer(i);
+            Thread c = new Thread(consumer);
+            c.start();
+        }
+    }
+
 
 
     public static void main(String[] args) {
@@ -107,10 +119,6 @@ public class ObjectTest implements Cloneable {
 //            e.printStackTrace();
 //        }
 
-        Producer producer = new Producer(1);
-
-        for (int i = 0; i < 10; i++) {
-            Consumer consumer = new Consumer(i);
-        }
+        testCase3();
     }
 }

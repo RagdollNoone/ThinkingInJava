@@ -1,7 +1,6 @@
 package Object;
 
-public class Producer implements Observer {
-    private Thread produceThread;
+public class Producer implements Observer, Runnable {
     private int producerId;
 
     public Producer(int producerId) {
@@ -9,21 +8,17 @@ public class Producer implements Observer {
         instance.addProducer(this);
 
         this.producerId = producerId;
+    }
 
-        produceThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    while(Buffer.getInstance().produce(producerId)) {
-                        Thread.sleep(500);
-                    }
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+    @Override
+    public void run() {
+        try {
+            while(Buffer.getInstance().produce(producerId)) {
+                Thread.sleep(500);
             }
-        });
-
-        produceThread.start();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
