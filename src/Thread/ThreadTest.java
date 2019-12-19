@@ -71,9 +71,9 @@ public class ThreadTest {
 
 //        testCase2();
 
-//        testCase3();
+        testCase3();
 
-        testCase4();
+//        testCase4();
 
 //        System.out.println(SystemInfo.Info());
     }

@@ -4,7 +4,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ThreadLocalSimple implements Runnable {
-    private static final ThreadLocal<SimpleDateFormat> sdf = ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
+    private static final ThreadLocal<SimpleDateFormat> sdf = ThreadLocal.withInitial(() -> {
+        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    });
     private String dateStr = "2018-06-22 10:00:00";
 
     @Override
