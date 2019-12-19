@@ -1,23 +1,23 @@
 package Thread.ThreadLocal;
-import java.util.Random;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class ThreadLocalSimple implements Runnable {
-    private static final ThreadLocal<Person> person = ThreadLocal.withInitial(() -> new Person("unknown", -1));
-    private static Random random = new Random();
+    private static final ThreadLocal<SimpleDateFormat> sdf = ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
+    private String dateStr = "2018-06-22 10:00:00";
 
     @Override
     public void run() {
-        print();
-
-        person.get().name = "Dendy";
-        person.get().age = random.nextInt(100);
-
-        print();
-    }
-
-    private void print() {
-        System.out.println("Thread name: " + Thread.currentThread().getName() +
-                           ", Person name: " + person.get().name +
-                           ", Person age: " + person.get().age);
+        try {
+            SimpleDateFormat simpleDateFormat = sdf.get();
+            System.out.println("Thread Name: " + Thread.currentThread().getName() + " simpleDateFormat address: " + simpleDateFormat.hashCode());
+            Date date = simpleDateFormat.parse(dateStr);
+            System.out.println("Thread Name: " + Thread.currentThread().getName() + " time: " + date);
+        } catch (ParseException e) {
+            System.out.println("ParseError " + e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

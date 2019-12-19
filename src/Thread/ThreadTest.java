@@ -5,7 +5,9 @@ import Thread.ProducerAndConsumer.Producer;
 import Thread.ThreadCreate.MyThread1;
 import Thread.ThreadCreate.MyThread2;
 import Thread.ThreadCreate.MyThread3;
+import Thread.ThreadLocal.ThreadLocalImplement;
 import Thread.ThreadLocal.ThreadLocalSimple;
+import Utility.SystemInfo;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadInfo;
@@ -52,8 +54,15 @@ public class ThreadTest {
         ThreadLocalSimple simple = new ThreadLocalSimple();
 
         for (int i = 0; i < 10; i++) {
-            Thread thread = new Thread(simple, "" + i);
-            thread.start();
+            Thread t = new Thread(simple, "" + i);
+            t.start();
+        }
+    }
+
+    private static void testCase4() {
+        for (int i = 0; i < 10; i++) {
+            ThreadLocalImplement t = new ThreadLocalImplement("" + i);
+            t.start();
         }
     }
 
@@ -62,7 +71,11 @@ public class ThreadTest {
 
 //        testCase2();
 
-        testCase3();
+//        testCase3();
+
+        testCase4();
+
+//        System.out.println(SystemInfo.Info());
     }
 
 
