@@ -26,7 +26,7 @@ public class MyThreadLocal {
                 System.out.println("Thread name: " + t.getName() + " In MyThreadLocal get, ret address is " + ret.hashCode());
                 return ret;
             } else {
-                System.out.println("Thread name: " + t.getName() + "In MyThreadLocal get, e is null");
+                System.out.println("Thread name: " + t.getName() + " In MyThreadLocal get, e is null");
             }
 
         } else {

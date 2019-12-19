@@ -5,13 +5,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ThreadLocalImplement extends MyThread{
-    private MyThreadLocal myThreadLocal;
-    private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    private static MyThreadLocal myThreadLocal;
+//    private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     private String dateStr = "2018-06-22 10:00:00";
 
     public ThreadLocalImplement(String name) {
         super(name);
-        myThreadLocal = new MyThreadLocal(this, sdf);
+        myThreadLocal = new MyThreadLocal(this, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
     }
 
     @Override
