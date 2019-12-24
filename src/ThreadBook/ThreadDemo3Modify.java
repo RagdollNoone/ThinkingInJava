@@ -1,8 +1,8 @@
-package Temp;
+package ThreadBook;
 
-public class ThreadDemo5Modify {
+public class ThreadDemo3Modify {
     private class TestClass1 {
-        public boolean a = false;
+        public int a = 10;
         public int b = 0;
 
         public int counter;
@@ -11,24 +11,22 @@ public class ThreadDemo5Modify {
             counter = 0;
         }
 
-        public void write() throws InterruptedException {
+        public void write() {
             Thread thd = Thread.currentThread();
-            a = true;
-            System.out.println("Thread name: " + thd.getName() + " , in write(), set a : true");
-            Thread.sleep(1000);
-            b = 2;
-            System.out.println("Thread name: " + thd.getName() + " , in write(), set b : 2");
+            a = 20;
+            System.out.println("Thread name: " + thd.getName() + " , in write(), set a : 20");
         }
 
-        public int modifyB() {
+        public int modifyB() throws InterruptedException{
             Thread thd = Thread.currentThread();
             System.out.println("Thread name: " + thd.getName() + " ,enter modifyB()");
 
-            if (a) {
-                System.out.println("Thread name: " + thd.getName() + " enter if statement modifyB()");
+            a = 10;
 
-                b = b * b;
-                a = false;
+            if (a == 10) {
+                System.out.println("Thread name: " + thd.getName() + " enter if statement modifyB()");
+                Thread.sleep(1000);
+                b = a / 2;
             }
 
             System.out.println("Thread name: " + thd.getName() + " return modifyB() b : " + b);
@@ -41,7 +39,7 @@ public class ThreadDemo5Modify {
     }
 
     private static void testCase0() {
-        ThreadDemo5Modify t = new ThreadDemo5Modify();
+        ThreadDemo3Modify t = new ThreadDemo3Modify();
         final TestClass1 tc = t.new TestClass1();
 
         Runnable r = new Runnable() {

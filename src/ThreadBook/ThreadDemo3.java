@@ -1,8 +1,8 @@
-package Temp;
+package ThreadBook;
 
-public class ThreadDemo5 {
+public class ThreadDemo3 {
     private class TestClass1 {
-        public boolean a = false;
+        public int a = 10;
         public int b = 0;
 
         public int counter;
@@ -11,24 +11,22 @@ public class ThreadDemo5 {
             counter = 0;
         }
 
-        public void write() throws InterruptedException {
+        public void write() {
             Thread thd = Thread.currentThread();
-            a = true;
-            System.out.println("Thread name: " + thd.getName() + " , in write(), set a : true");
-            Thread.sleep(1000);
-            b = 2;
-            System.out.println("Thread name: " + thd.getName() + " , in write(), set b : 2");
+            a = 20;
+            System.out.println("Thread name: " + thd.getName() + " , in write(), set a : 20");
         }
 
-        public int modifyB() {
+        public int modifyB() throws InterruptedException{
             Thread thd = Thread.currentThread();
             System.out.println("Thread name: " + thd.getName() + " ,enter modifyB()");
 
-            if (a) {
-                System.out.println("Thread name: " + thd.getName() + " enter if statement modifyB()");
+            a = 10;
 
-                b = b * b;
-                a = false;
+            if (a == 10) {
+                System.out.println("Thread name: " + thd.getName() + " enter if statement modifyB()");
+                Thread.sleep(1000);
+                b = a / 2;
             }
 
             System.out.println("Thread name: " + thd.getName() + " return modifyB() b : " + b);
@@ -42,6 +40,7 @@ public class ThreadDemo5 {
 
     private static class TestClass2 {
         private static TestClass2 instance;
+        private int value; // need add this to reproduce init instance bug
 
         private TestClass2() {  }
 
@@ -55,7 +54,7 @@ public class ThreadDemo5 {
     }
 
     private static void testCase0() {
-        ThreadDemo5 t = new ThreadDemo5();
+        ThreadDemo3 t = new ThreadDemo3();
         final TestClass1 tc = t.new TestClass1();
 
         Runnable r = new Runnable() {
@@ -73,13 +72,13 @@ public class ThreadDemo5 {
     }
 
     private static void testCase1() {
-        ThreadDemo5 t = new ThreadDemo5();
+        ThreadDemo3 t = new ThreadDemo3();
         final TestClass1 tc = t.new TestClass1();
 
         Runnable r1 = new Runnable() {
             @Override
             public void run() {
-                while(true) {
+                while (true) {
                     try {
                         tc.write();
                         Thread.sleep(500);
@@ -93,13 +92,13 @@ public class ThreadDemo5 {
         Runnable r2 = new Runnable() {
             @Override
             public void run() {
-                while(true) {
-                    try {
+                try {
+                    while (true) {
                         tc.modifyB();
                         Thread.sleep(500);
-                    } catch (InterruptedException e) {
-
                     }
+                } catch (InterruptedException e) {
+
                 }
             }
         };
@@ -128,7 +127,7 @@ public class ThreadDemo5 {
     }
 
     public static void main(String... args) {
-        testCase0();
+//        testCase0();
 //        testCase1();
 //        testCase2();
     }
