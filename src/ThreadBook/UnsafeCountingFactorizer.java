@@ -6,7 +6,7 @@ public class UnsafeCountingFactorizer {
     public UnsafeCountingFactorizer() {}
 
     public Long getNext() {
-        return count++;
+        return ++count;
     }
 
     public static void main(String[] args) {
