@@ -8,7 +8,29 @@ public class SynchronizedFactorizer {
     private final AtomicReference<BigInteger> lastNumber = new AtomicReference<>();
     private final AtomicReference<BigInteger[]> lastFactor = new AtomicReference<>();
 
-    public SynchronizedFactorizer() { }
+    private long hits;
+    private long cacheHists;
+
+    public SynchronizedFactorizer() {
+        hits = 0;
+        cacheHists = 0;
+    }
+
+    public synchronized long getHits() {
+        return hits;
+    }
+
+    public synchronized double getCacheHitRatio() {
+        return ((double)cacheHists / (double)hits);
+    }
+
+    public void increaseHits() {
+        hits++;
+    }
+
+    public void increaseCacheHits() {
+        cacheHists++;
+    }
 
     public void setLastNumber(BigInteger integer) {
         lastNumber.set(integer);
@@ -30,10 +52,22 @@ public class SynchronizedFactorizer {
         return lastFactor;
     }
 
+    // in fact we need time to get the factorizer result
+    public void doFactorizer() {
+        try {
+            Thread.sleep(500);
+        } catch (Exception e) {
+            System.out.println("SynchronizedFactorizer error 2");
+        }
+    }
+
     private static synchronized void checkAndModify(SynchronizedFactorizer o, int[] array) {
-        if (o.getLastNumber().get() == BigInteger.valueOf(array[0])) {
+        o.increaseHits();
+        if (null != o.getLastNumber().get() && o.getLastNumber().get().equals(BigInteger.valueOf(array[0]))) {
+            o.increaseCacheHits();
             print(o);
         } else {
+            o.doFactorizer();
             o.setLastNumber(BigInteger.valueOf(array[0]));
             o.setLastFactor(BigInteger.valueOf(array[1]), BigInteger.valueOf(array[2]));
             print(o);
@@ -50,6 +84,8 @@ public class SynchronizedFactorizer {
     }
 
     public static void main(String[] args) {
+        long start = System.currentTimeMillis();
+
         SynchronizedFactorizer instance = new SynchronizedFactorizer();
         Random random = new Random();
 
@@ -59,20 +95,18 @@ public class SynchronizedFactorizer {
         Runnable r = new Runnable() {
             @Override
             public void run() {
-                while (true) {
+                while (instance.getHits() < 50) {
                     try {
                         int value = random.nextInt(100);
 
                         if (value % 2 == 0) {
                             checkAndModify(instance, testValue1);
-                            Thread.sleep(500);
                         } else {
                             checkAndModify(instance, testValue2);
                         }
-
-                        Thread.sleep(500);
                     } catch (Exception e) {
                         System.out.println("SynchronizedFactorizer error 1");
+                        break;
                     }
                 }
             }
@@ -83,5 +117,15 @@ public class SynchronizedFactorizer {
 
         t1.start();
         t2.start();
+
+        try {
+            t1.join();
+            t2.join();
+        } catch (Exception e) {
+            System.out.println("SynchronizedFactorizer error 3");
+        }
+
+        long end = System.currentTimeMillis();
+        System.out.println("Hit ration : " + instance.getCacheHitRatio() + " cost time : " + (end - start) / 1000);
     }
 }
