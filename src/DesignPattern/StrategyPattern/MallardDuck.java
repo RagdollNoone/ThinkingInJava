@@ -1,6 +1,5 @@
 package DesignPattern.StrategyPattern;
 
-import DesignPattern.StrategyPattern.Duck;
 
 public class MallardDuck extends Duck {
     public MallardDuck() {

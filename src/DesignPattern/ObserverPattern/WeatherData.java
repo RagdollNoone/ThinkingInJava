@@ -1,5 +1,8 @@
 package DesignPattern.ObserverPattern;
 
+import DesignPattern.ObserverPattern.TestCase1.DisplayElement;
+import DesignPattern.ObserverPattern.TestCase2.Node;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -11,7 +14,7 @@ public class WeatherData implements Subject {
     private float pressure;
 
     private ArrayList<Observer> observerArrayList;
-    private Tree<Observer> observerTree;
+    private DisplayElement.Tree<Observer> observerTree;
     private Queue<Node<Observer>> travelSupport;
 
     private boolean hasChanged = false;
@@ -97,7 +100,7 @@ public class WeatherData implements Subject {
         return hasChanged;
     }
 
-    public void setObserverTree(Tree<Observer> observerTree) {
+    public void setObserverTree(DisplayElement.Tree<Observer> observerTree) {
         this.observerTree = observerTree;
     }
 }
