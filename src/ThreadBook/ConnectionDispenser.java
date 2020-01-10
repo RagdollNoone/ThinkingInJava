@@ -21,6 +21,7 @@ public class ConnectionDispenser {
                 Thread thd = Thread.currentThread();
 
                 Connection connection = instance.getConnection();
+                System.out.println("Thread name : " + thd.getName() + " Url hashCode : " + connection.getUrl().hashCode());
                 System.out.println("Thread name : " + thd.getName() + " connection hashCode : " + connection.hashCode() + " before value : " + Connection.getUrl());
                 Connection.setUrl(String.valueOf(random.nextInt(100)));
                 System.out.println("Thread name : " + thd.getName() + " connection hashCode : " + connection.hashCode() + " after value : " + Connection.getUrl());
