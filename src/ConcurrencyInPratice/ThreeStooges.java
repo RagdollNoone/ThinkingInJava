@@ -1,4 +1,4 @@
-package ThreadBook;
+package ConcurrencyInPratice;
 
 import java.util.HashSet;
 import java.util.Set;

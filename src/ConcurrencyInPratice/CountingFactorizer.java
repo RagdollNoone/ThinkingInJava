@@ -1,4 +1,4 @@
-package ThreadBook;
+package ConcurrencyInPratice;
 
 import java.util.concurrent.atomic.AtomicLong;
 

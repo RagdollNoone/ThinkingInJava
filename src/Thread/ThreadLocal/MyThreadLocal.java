@@ -4,9 +4,9 @@ import java.lang.ref.WeakReference;
 
 public class MyThreadLocal {
 
-    public MyThreadLocal(MyThread t, Object v) {
-        t.map = new MyThreadLocalMap(this, v);
-    }
+//    public MyThreadLocal(MyThread t, Object v) {
+//        t.map = new MyThreadLocalMap(this, v);
+//    }
 
     public Object get() {
         Object ret = null;
@@ -40,8 +40,17 @@ public class MyThreadLocal {
         Thread t = Thread.currentThread();
         if (t instanceof MyThread) {
             MyThreadLocalMap m = ((MyThread) t).getMap();
-            m.set(this, v);
+
+            if (m != null) {
+                m.set(this, v);
+            } else {
+                this.createMap((MyThread)t, v);
+            }
         }
+    }
+
+    void createMap(MyThread t, Object v) {
+        t.setMap(new MyThreadLocalMap(this, v));
     }
 
     static class MyThreadLocalMap {

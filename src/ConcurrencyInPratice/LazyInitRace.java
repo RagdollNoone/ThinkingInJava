@@ -1,4 +1,4 @@
-package ThreadBook;
+package ConcurrencyInPratice;
 
 public class LazyInitRace {
     private static LazyInitRace instance;

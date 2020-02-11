@@ -1,36 +1,14 @@
-package ThreadBook;
+package ConcurrencyInPratice;
 
 import java.math.BigInteger;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class SynchronizedFactorizer {
+public class UnsafeCachingFactorizer {
     private final AtomicReference<BigInteger> lastNumber = new AtomicReference<>();
     private final AtomicReference<BigInteger[]> lastFactor = new AtomicReference<>();
 
-    private long hits;
-    private long cacheHists;
-
-    public SynchronizedFactorizer() {
-        hits = 0;
-        cacheHists = 0;
-    }
-
-    public synchronized long getHits() {
-        return hits;
-    }
-
-    public synchronized double getCacheHitRatio() {
-        return ((double)cacheHists / (double)hits);
-    }
-
-    public void increaseHits() {
-        hits++;
-    }
-
-    public void increaseCacheHits() {
-        cacheHists++;
-    }
+    public UnsafeCachingFactorizer() { }
 
     public void setLastNumber(BigInteger integer) {
         lastNumber.set(integer);
@@ -52,29 +30,17 @@ public class SynchronizedFactorizer {
         return lastFactor;
     }
 
-    // in fact we need time to get the factorizer result
-    public void doFactorizer() {
-        try {
-            Thread.sleep(500);
-        } catch (Exception e) {
-            System.out.println("SynchronizedFactorizer error 2");
-        }
-    }
-
-    private static synchronized void checkAndModify(SynchronizedFactorizer o, int[] array) {
-        o.increaseHits();
-        if (null != o.getLastNumber().get() && o.getLastNumber().get().equals(BigInteger.valueOf(array[0]))) {
-            o.increaseCacheHits();
+    private static void checkAndModify(UnsafeCachingFactorizer o, int[] array) {
+        if (o.getLastNumber().get() == BigInteger.valueOf(array[0])) {
             print(o);
         } else {
-            o.doFactorizer();
             o.setLastNumber(BigInteger.valueOf(array[0]));
             o.setLastFactor(BigInteger.valueOf(array[1]), BigInteger.valueOf(array[2]));
             print(o);
         }
     }
 
-    private static void print(SynchronizedFactorizer o) {
+    private static void print(UnsafeCachingFactorizer o) {
         Thread thd = Thread.currentThread();
 
         System.out.println("Thread name : " + thd.getName() +
@@ -84,9 +50,7 @@ public class SynchronizedFactorizer {
     }
 
     public static void main(String[] args) {
-        long start = System.currentTimeMillis();
-
-        SynchronizedFactorizer instance = new SynchronizedFactorizer();
+        UnsafeCachingFactorizer instance = new UnsafeCachingFactorizer();
         Random random = new Random();
 
         int[] testValue1 = {15, 5, 3};
@@ -95,18 +59,20 @@ public class SynchronizedFactorizer {
         Runnable r = new Runnable() {
             @Override
             public void run() {
-                while (instance.getHits() < 50) {
+                while (true) {
                     try {
                         int value = random.nextInt(100);
 
                         if (value % 2 == 0) {
                             checkAndModify(instance, testValue1);
+                            Thread.sleep(500);
                         } else {
                             checkAndModify(instance, testValue2);
                         }
+
+                        Thread.sleep(500);
                     } catch (Exception e) {
-                        System.out.println("SynchronizedFactorizer error 1");
-                        break;
+                        System.out.println("UnsafeCachingFactorizer error 1");
                     }
                 }
             }
@@ -117,15 +83,5 @@ public class SynchronizedFactorizer {
 
         t1.start();
         t2.start();
-
-        try {
-            t1.join();
-            t2.join();
-        } catch (Exception e) {
-            System.out.println("SynchronizedFactorizer error 3");
-        }
-
-        long end = System.currentTimeMillis();
-        System.out.println("Hit ration : " + instance.getCacheHitRatio() + " cost time : " + (end - start) / 1000);
     }
 }

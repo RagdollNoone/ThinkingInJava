@@ -1,7 +1,7 @@
 package Thread.ThreadLocal;
 
 public class MyThread extends Thread {
-    MyThreadLocal.MyThreadLocalMap map = null;
+    private MyThreadLocal.MyThreadLocalMap map;
 
     public MyThread(String name) {
         super(name);
@@ -9,5 +9,9 @@ public class MyThread extends Thread {
 
     public MyThreadLocal.MyThreadLocalMap getMap() {
         return map;
+    }
+
+    public void setMap(MyThreadLocal.MyThreadLocalMap map) {
+        this.map = map;
     }
 }

@@ -11,7 +11,7 @@ public class ThreadLocalImplement extends MyThread{
 
     public ThreadLocalImplement(String name) {
         super(name);
-        myThreadLocal = new MyThreadLocal(this, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
+//        myThreadLocal = new MyThreadLocal(this, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
     }
 
     @Override

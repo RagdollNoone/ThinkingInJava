@@ -1,14 +1,14 @@
-package ThreadBook;
+package ConcurrencyInPratice;
 
-public class Sequence {
+public class UnsafeSequence {
     private int value;
 
-    public synchronized int getNext() {
+    public int getNext() {
         return value++;
     }
 
     public static void main(String... args) {
-        final Sequence instance = new Sequence();
+        final UnsafeSequence instance = new UnsafeSequence();
 
         Runnable r = new Runnable() {
             @Override
@@ -19,7 +19,7 @@ public class Sequence {
                         System.out.println(thd.getName() + " get next value : " + instance.getNext());
                         Thread.sleep(500);
                     } catch (InterruptedException e) {
-                        System.out.println("Sequence InterruptedException");
+                        System.out.println("UnsafeSequence InterruptedException");
                     }
                 }
             }
