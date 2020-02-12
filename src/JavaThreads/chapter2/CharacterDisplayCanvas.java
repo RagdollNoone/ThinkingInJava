@@ -10,7 +10,7 @@ implements CharacterListener {
     protected int fontHeight;
 
     public CharacterDisplayCanvas() {
-        setFont(new Font("Monospaced", Font.BOLD, 18));
+        setFont(new Font("Monospaced", Font.BOLD, 15));
         fm = Toolkit.getDefaultToolkit().getFontMetrics(getFont());
         fontHeight = fm.getHeight();
 
