@@ -1,4 +1,4 @@
-package JavaThreads.chapter2.ex2;
+package JavaThreads.chapter2.ex;
 
 import JavaThreads.chapter2.CharacterDisplayCanvas;
 import JavaThreads.chapter2.CharacterEventHandler;
@@ -8,16 +8,16 @@ import JavaThreads.chapter2.CharacterSource;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.Random;
 
 public class SwingTypeTester extends JFrame
 implements CharacterSource {
     protected RandomCharacterGenerator producer;
-    private CharacterDisplayCanvas displayCanvas;
+    private AnimatedCharacterDisplayCanvas displayCanvas;
     private CharacterDisplayCanvas feedbackCanvas;
 
     private JButton quitButton;
     private JButton startButton;
+    private JButton stopButton;
 
     private CharacterEventHandler handler;
 
@@ -59,7 +59,7 @@ implements CharacterSource {
     }
 
     private void initCanvas() {
-        displayCanvas = new CharacterDisplayCanvas();
+        displayCanvas = new AnimatedCharacterDisplayCanvas();
         feedbackCanvas = new CharacterDisplayCanvas(this);
 
         add(displayCanvas, BorderLayout.NORTH);
@@ -82,10 +82,15 @@ implements CharacterSource {
 
         quitButton = new JButton();
         startButton = new JButton();
+        stopButton = new JButton();
         startButton.setText("Start");
         quitButton.setText("Quit");
+        stopButton.setText("Stop");
         p.add(startButton);
         p.add(quitButton);
+        p.add(stopButton);
+
+        stopButton.setEnabled(false);
 
         startButton.addActionListener(new ActionListener() {
             @Override
@@ -93,9 +98,14 @@ implements CharacterSource {
                 producer = new RandomCharacterGenerator();
                 displayCanvas.setCharacterSource(producer);
 
+                Thread t = new Thread(displayCanvas);
+                t.start();
+
                 producer.start();
 
                 startButton.setEnabled(false);
+                stopButton.setEnabled(true);
+
                 feedbackCanvas.setEnabled(true);
                 feedbackCanvas.requestFocus();
             }
@@ -105,6 +115,21 @@ implements CharacterSource {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 quit();
+            }
+        });
+
+        stopButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                startButton.setEnabled(true);
+                stopButton.setEnabled(false);
+
+//                producer.setDone();
+                producer.interrupt();
+
+                displayCanvas.setDone(true);
+
+                feedbackCanvas.setEnabled(false);
             }
         });
     }

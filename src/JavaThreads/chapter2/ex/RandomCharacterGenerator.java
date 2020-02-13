@@ -1,4 +1,4 @@
-package JavaThreads.chapter2.ex2;
+package JavaThreads.chapter2.ex;
 
 import JavaThreads.chapter2.CharacterEventHandler;
 import JavaThreads.chapter2.CharacterListener;
@@ -18,6 +18,8 @@ implements CharacterSource {
     Random random;
 
     CharacterEventHandler handler;
+
+    private volatile boolean done = false;
 
     public RandomCharacterGenerator() {
         random = new Random();
@@ -45,7 +47,12 @@ implements CharacterSource {
     }
 
     public void run() {
-        for (;;) {
+//        run1();
+        run2();
+    }
+
+    private void run1() {
+        while (!done) {
             nextCharacter();
             try {
                 Thread.sleep(getPauseTime());
@@ -53,5 +60,22 @@ implements CharacterSource {
                 return;
             }
         }
+    }
+
+    private void run2() {
+        while(!isInterrupted()) {
+            nextCharacter();
+            try {
+                Thread.sleep(getPauseTime());
+            } catch (InterruptedException e) {
+                System.out.println("InterruptedException from file RandomCharacterGenerator, function run2");
+                return;
+            }
+        }
+    }
+
+
+    public void setDone() {
+        done = true;
     }
 }
