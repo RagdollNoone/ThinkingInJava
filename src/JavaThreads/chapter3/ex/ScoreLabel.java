@@ -2,15 +2,16 @@ package JavaThreads.chapter3.ex;
 
 import JavaThreads.chapter3.*;
 import javax.swing.*;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class ScoreLabel extends JLabel
 implements CharacterListener {
-    // TODO: static synchronized 会获得class对象的lock, 多个这样的函数的race condition
-    // TODO: synchronized function调用一个static synchronized
 
     private volatile  int score = 0; // TODO: 为什么要声明为volatile
     private int char2type = -1;
     private CharacterSource generator = null, typist = null;
+    private Lock scoreLock = new ReentrantLock();
 
     public ScoreLabel(CharacterSource generator, CharacterSource typist) {
         this.generator = generator;
@@ -29,38 +30,55 @@ implements CharacterListener {
         this(null, null);
     }
 
-    public synchronized void resetGenerator(CharacterSource newGenerator) {
-        if (null != this.generator) {
-            this.generator.removeCharacterListener(this);
-        }
+    public void resetGenerator(CharacterSource newGenerator) {
+        try {
+            scoreLock.lock();
 
-        this.generator = newGenerator;
+            if (null != this.generator) {
+                this.generator.removeCharacterListener(this);
+            }
 
-        if (null != this.generator) {
-            this.generator.addCharacterListener(this);
+            this.generator = newGenerator;
+
+            if (null != this.generator) {
+                this.generator.addCharacterListener(this);
+            }
+        } finally {
+            scoreLock.unlock();
         }
     }
 
-    public synchronized void resetTypist(CharacterSource newTypist) {
-        if (null != this.typist) {
-            this.typist.removeCharacterListener(this);
-        }
+    public void resetTypist(CharacterSource newTypist) {
+        try {
+            scoreLock.lock();
 
-        this.typist = newTypist;
+            if (null != this.typist) {
+                this.typist.removeCharacterListener(this);
+            }
 
-        if (null != this.typist) {
-            this.typist.addCharacterListener(this);
+            this.typist = newTypist;
+
+            if (null != this.typist) {
+                this.typist.addCharacterListener(this);
+            }
+        } finally {
+            scoreLock.unlock();
         }
     }
 
     public synchronized void resetScore() {
-        score = 0;
-        char2type = -1;
-        setScore();
+        try {
+            scoreLock.lock();
+
+            score = 0;
+            char2type = -1;
+            setScore();
+        } finally {
+            scoreLock.unlock();
+        }
     }
 
-    // TODO: 如果有一个类似的函数 但是却不是同步的 在多线程的情况下会怎么样
-    private synchronized void setScore() {
+    private void setScore() {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -71,23 +89,31 @@ implements CharacterListener {
 
 
     @Override
-    public synchronized void newCharacter(CharacterEvent ce) {
+    public void newCharacter(CharacterEvent ce) {
         if (ce.source == this.generator) {
-            if (char2type != -1) {
-                score--;
-                setScore();
-            }
-
-            char2type = ce.character;
+            newGeneratorCharacter(ce.character);
         } else {
-            if (char2type != ce.character) {
-                score--;
-            } else {
-                score++;
-                char2type = -1;
-            }
+            newTypistCharacter(ce.character);
+        }
+    }
 
+    private synchronized void newGeneratorCharacter(int c) {
+        if (char2type != -1) {
+            score--;
             setScore();
         }
+
+        char2type = c;
+    }
+
+    private synchronized void newTypistCharacter(int c) {
+        if (char2type != c) {
+            score--;
+        } else {
+            score++;
+            char2type = -1;
+        }
+
+        setScore();
     }
 }

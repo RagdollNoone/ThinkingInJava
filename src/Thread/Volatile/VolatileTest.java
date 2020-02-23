@@ -1,4 +1,4 @@
-package Volatile;
+package Thread.Volatile;
 
 public class VolatileTest {
     // part 1

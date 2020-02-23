@@ -1,4 +1,4 @@
-package DeadLock;
+package Thread.DeadLock;
 
 public class DeadLockTest {
     private static Object resource1 = new Object();
