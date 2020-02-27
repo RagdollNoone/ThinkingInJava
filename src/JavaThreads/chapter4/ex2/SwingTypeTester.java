@@ -1,14 +1,18 @@
-package JavaThreads.chapter3.ex;
-
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
+package JavaThreads.chapter4.ex2;
 
 import JavaThreads.CharacterEventHandler;
 import JavaThreads.CharacterListener;
 import JavaThreads.CharacterSource;
-import JavaThreads.chapter3.*;
+import JavaThreads.chapter4.CharacterDisplayCanvas;
+import JavaThreads.chapter4.ScoreLabel;
+import JavaThreads.chapter4.ex2.AnimatedCharacterDisplayCanvas;
+import JavaThreads.chapter4.ex2.RandomCharacterGenerator;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+// 可以把wait-notify机制换成volatile状态位的方案
 public class SwingTypeTester extends JFrame implements CharacterSource {
 
     protected RandomCharacterGenerator producer;
@@ -67,15 +71,19 @@ public class SwingTypeTester extends JFrame implements CharacterSource {
                     newCharacter((int) c);
             }
         });
+
+        producer = new RandomCharacterGenerator();
+        displayCanvas.setCharacterSource(producer);
+        score.resetGenerator(producer);
+        producer.start();
+        Thread t = new Thread(displayCanvas);
+        t.start();
+
         startButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                producer = new RandomCharacterGenerator();
-                displayCanvas.setCharacterSource(producer);
-                score.resetGenerator(producer);
-                producer.start();
+                producer.setDone(false);
                 displayCanvas.setDone(false);
-                Thread t = new Thread(displayCanvas);
-                t.start();
+
                 startButton.setEnabled(false);
                 stopButton.setEnabled(true);
                 feedbackCanvas.setEnabled(true);
@@ -83,20 +91,25 @@ public class SwingTypeTester extends JFrame implements CharacterSource {
                 score.resetScore();
             }
         });
+
         stopButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
+                producer.setDone(true);
+                displayCanvas.setDone(true);
+
                 startButton.setEnabled(true);
                 stopButton.setEnabled(false);
-                producer.setDone();
                 displayCanvas.setDone(true);
                 feedbackCanvas.setEnabled(false);
             }
         });
+
         quitButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 quit();
             }
         });
+
         pack();
     }
 

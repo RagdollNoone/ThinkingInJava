@@ -1,9 +1,10 @@
-package JavaThreads.chapter3.ex;
+package JavaThreads.chapter4.ex1;
 
-import java.util.*;
 import JavaThreads.CharacterEventHandler;
 import JavaThreads.CharacterListener;
 import JavaThreads.CharacterSource;
+
+import java.util.Random;
 
 public class RandomCharacterGenerator extends Thread implements CharacterSource {
     static char[] chars;
@@ -15,7 +16,7 @@ public class RandomCharacterGenerator extends Thread implements CharacterSource 
     Random random;
     CharacterEventHandler handler;
 
-    private volatile boolean done = false;
+    private boolean done = true;
 
     public RandomCharacterGenerator() {
         random = new Random();
@@ -40,18 +41,27 @@ public class RandomCharacterGenerator extends Thread implements CharacterSource 
                                 (int) chars[random.nextInt(chars.length)]);
     }
 
-    public void run() {
-        while (!done) {
-            nextCharacter();
+    @Override
+    public synchronized void run() {
+        while (true) {
             try {
-                Thread.sleep(getPauseTime());
+                if (done) {
+                    wait();
+                } else {
+                    nextCharacter();
+                    wait(getPauseTime());
+                }
             } catch (InterruptedException ie) {
                 return;
             }
         }
     }
 
-    public void setDone() {
-        done = true;
+    public synchronized void setDone(boolean b) {
+        done = b;
+
+        if (!done) {
+            notify();
+        }
     }
 }

@@ -1,14 +1,16 @@
-package JavaThreads.chapter3.ex;
+package JavaThreads.chapter4.ex2;
 
-import java.awt.*;
 import JavaThreads.CharacterEvent;
 import JavaThreads.CharacterListener;
 import JavaThreads.CharacterSource;
-import JavaThreads.chapter3.*;
+import JavaThreads.chapter4.CharacterDisplayCanvas;
+
+import java.awt.*;
 
 public class AnimatedCharacterDisplayCanvas extends CharacterDisplayCanvas implements CharacterListener, Runnable {
 
-    private volatile boolean done = false;
+    private boolean done = true;
+    private Object doneLock = new Object();
     private int curX = 0;
 
     public AnimatedCharacterDisplayCanvas() {
@@ -35,17 +37,30 @@ public class AnimatedCharacterDisplayCanvas extends CharacterDisplayCanvas imple
     }
 
     public void run() {
-        while (!done) {
-            repaint();
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException ie) {
-                return;
+        synchronized (doneLock) {
+            while (true) {
+                try {
+                    if (done) {
+                        doneLock.wait();
+                    } else {
+                        repaint();
+                        doneLock.wait(100);
+                    }
+
+                } catch (InterruptedException ie) {
+                    return;
+                }
             }
         }
     }
 
     public void setDone(boolean b) {
-        done = b;
+        synchronized (doneLock) {
+            done = b;
+
+            if (!done) {
+                doneLock.notify();
+            }
+        }
     }
 }

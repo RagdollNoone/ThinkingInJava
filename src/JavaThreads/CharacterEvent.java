@@ -1,11 +1,11 @@
-package JavaThreads.chapter3;
+package JavaThreads;
 
 public class CharacterEvent {
     public CharacterSource source;
     public int character;
 
     public CharacterEvent(CharacterSource cs, int c) {
-        source = cs;
-        character = c;
+        this.source = cs;
+        this.character = c;
     }
 }

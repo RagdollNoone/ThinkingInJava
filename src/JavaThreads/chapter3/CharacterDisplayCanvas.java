@@ -1,5 +1,9 @@
 package JavaThreads.chapter3;
 
+import JavaThreads.CharacterEvent;
+import JavaThreads.CharacterListener;
+import JavaThreads.CharacterSource;
+
 import java.awt.*;
 import javax.swing.*;
 

@@ -1,9 +1,9 @@
-package JavaThreads.chapter2.ex;
+package JavaThreads.chapter2.ex1;
 
+import JavaThreads.CharacterEventHandler;
+import JavaThreads.CharacterListener;
+import JavaThreads.CharacterSource;
 import JavaThreads.chapter2.CharacterDisplayCanvas;
-import JavaThreads.chapter2.CharacterEventHandler;
-import JavaThreads.chapter2.CharacterListener;
-import JavaThreads.chapter2.CharacterSource;
 
 import javax.swing.*;
 import java.awt.*;

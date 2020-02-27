@@ -1,8 +1,9 @@
-package JavaThreads.chapter3.ex;
+package JavaThreads.chapter4;
 
 import JavaThreads.CharacterEvent;
 import JavaThreads.CharacterListener;
 import JavaThreads.CharacterSource;
+
 import javax.swing.*;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

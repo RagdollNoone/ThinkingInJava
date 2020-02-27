@@ -1,9 +1,9 @@
-package JavaThreads.chapter3;
+package JavaThreads;
 
-import java.util.*;
+import java.util.Vector;
 
 public class CharacterEventHandler {
-    private Vector listeners = new Vector();
+    private Vector<CharacterListener> listeners = new Vector<>();
 
     public void addCharacterListener(CharacterListener cl) {
         listeners.add(cl);
@@ -15,9 +15,9 @@ public class CharacterEventHandler {
 
     public void fireNewCharacter(CharacterSource source, int c) {
         CharacterEvent ce = new CharacterEvent(source, c);
-        CharacterListener[] cl = (CharacterListener[] )
-            listeners.toArray(new CharacterListener[0]);
-        for (int i = 0; i < cl.length; i++)
-            cl[i].newCharacter(ce);
+
+        for (int i = 0; i < listeners.size(); i++) {
+            listeners.get(i).newCharacter(ce);
+        }
     }
 }

@@ -1,9 +1,14 @@
-package JavaThreads.chapter3.ex;
+package JavaThreads.chapter4.ex2;
 
-import java.util.*;
 import JavaThreads.CharacterEventHandler;
 import JavaThreads.CharacterListener;
 import JavaThreads.CharacterSource;
+
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class RandomCharacterGenerator extends Thread implements CharacterSource {
     static char[] chars;
@@ -15,7 +20,9 @@ public class RandomCharacterGenerator extends Thread implements CharacterSource 
     Random random;
     CharacterEventHandler handler;
 
-    private volatile boolean done = false;
+    private boolean done = true;
+    private Lock lock = new ReentrantLock();
+    private Condition cv = lock.newCondition();
 
     public RandomCharacterGenerator() {
         random = new Random();
@@ -40,18 +47,38 @@ public class RandomCharacterGenerator extends Thread implements CharacterSource 
                                 (int) chars[random.nextInt(chars.length)]);
     }
 
+    @Override
     public void run() {
-        while (!done) {
-            nextCharacter();
-            try {
-                Thread.sleep(getPauseTime());
-            } catch (InterruptedException ie) {
-                return;
+        try {
+            lock.lock();
+            while (true) {
+                if (done) {
+                    cv.await();
+                } else {
+                    nextCharacter();
+                    cv.await(getPauseTime(), TimeUnit.MILLISECONDS);
+                }
             }
+        } catch (InterruptedException ie) {
+            return;
+        } finally {
+            lock.unlock();
         }
+
+
     }
 
-    public void setDone() {
-        done = true;
+    public void setDone(boolean b) {
+        try {
+            lock.lock();
+            done = b;
+
+            if (!done) {
+                cv.signal();
+            }
+
+        } finally {
+            lock.unlock();
+        }
     }
 }

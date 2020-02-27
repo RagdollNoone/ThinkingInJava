@@ -1,4 +1,4 @@
-package JavaThreads.chapter2;
+package JavaThreads;
 
 public interface CharacterListener {
     void newCharacter(CharacterEvent e);
