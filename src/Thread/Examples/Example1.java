@@ -1,9 +1,15 @@
-package Thread;
+package Thread.Examples;
 
-import java.beans.PersistenceDelegate;
+
 import java.util.concurrent.atomic.AtomicReference;
 
-public class example1 {
+/*
+    这个例子展示了atomic修饰的变量和普通变量之间在多线程的情况下的区别
+    普通变量由于指令重排序和race condition 最终的结果是不可预期的
+    而atomic修饰的变量尤其是person对象 不管最终指定的人是谁 但是人名和
+    年龄总是匹配的
+*/
+public class Example1 {
     private static Person person;
     private static String message;
 
@@ -25,8 +31,9 @@ public class example1 {
         System.out.println("Atomic Reference of Message is: " + arMessage.get()
                 + "\nAtomic Reference of Person is " + arPerson.get().toString());
 
-        t1.start();
         t2.start();
+        t1.start();
+
         t1.join();
         t2.join();
 
@@ -39,16 +46,18 @@ public class example1 {
     private static class Run1 implements Runnable {
         @Override
         public void run() {
-            arMessage.compareAndSet(message, "thread 0");
-            message = message.concat(" @thread 0");
-            person.setAge(person.getAge() + 1);
-            person.setName("thread 0");
-            arPerson.getAndSet(new Person("thead 0", 1));
+            String threadName = Thread.currentThread().getName();
 
-            System.out.println("\n" + Thread.currentThread().getName() +" Values "
+            arMessage.compareAndSet(message, threadName);
+            message = message.concat(" @" + threadName);
+            person.setAge(person.getAge() + 1);
+            person.setName(threadName);
+            arPerson.getAndSet(new Person(threadName, 1));
+
+            System.out.println("\n" + threadName +" Values "
                     + message + " - " + person.toString());
 
-            System.out.println("\n" + Thread.currentThread().getName() +" Atomic References "
+            System.out.println("\n" + threadName +" Atomic References "
                     + arMessage.get() + " - " + arPerson.get().toString());
         }
     }
@@ -56,16 +65,18 @@ public class example1 {
     private static class Run2 implements Runnable {
         @Override
         public void run() {
-            message = message.concat(" @thread 1");
-            person.setAge(person.getAge() + 2);
-            person.setName("thread1");
-            arMessage.lazySet("thread1");
-            arPerson.set(new Person("thread1", 2));
+            String threadName = Thread.currentThread().getName();
 
-            System.out.println("\n" + Thread.currentThread().getName() +" Values "
+            message = message.concat(" @" + threadName);
+            person.setAge(person.getAge() + 2);
+            person.setName(threadName);
+            arMessage.lazySet(threadName);
+            arPerson.set(new Person(threadName, 2));
+
+            System.out.println("\n" + threadName +" Values "
                     + message + " - " + person.toString());
 
-            System.out.println("\n" + Thread.currentThread().getName() +" Atomic References "
+            System.out.println("\n" + threadName +" Atomic References "
                     + arMessage.get() + " - " + arPerson.get().toString());
         }
     }
