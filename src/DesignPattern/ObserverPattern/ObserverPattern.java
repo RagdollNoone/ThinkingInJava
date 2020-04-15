@@ -10,7 +10,9 @@ public class ObserverPattern {
     public static void TestObserverPattern(String[] args) {
         System.out.println("Test ObserverPattern Result: ");
         TestCase1(args);
+
         System.out.println();
+
         TestCase2(args);
         System.out.println("############### END ###############");
         System.out.println();

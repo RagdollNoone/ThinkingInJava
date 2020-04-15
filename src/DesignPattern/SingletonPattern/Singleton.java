@@ -7,7 +7,7 @@ public class Singleton {
 
     protected Singleton() {}
 
-    public Singleton getInstance() { return SingleHolder.instance; }
+    public static Singleton getInstance() { return SingleHolder.instance; }
 
     @Override
     public String toString() {

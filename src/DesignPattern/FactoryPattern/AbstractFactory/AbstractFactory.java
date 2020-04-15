@@ -6,6 +6,7 @@ import DesignPattern.FactoryPattern.AbstractFactory.Store.PizzaStore;
 
 public class AbstractFactory {
     public static void TestAbstractFactory(String[] args) {
+        System.out.println("TestFactoryPattern TestAbstractFactory Result: ");
         PizzaStore nyPizzaStore = new NYPizzaStore();
         nyPizzaStore.orderPizza("cheese");
         nyPizzaStore.orderPizza("clam");
